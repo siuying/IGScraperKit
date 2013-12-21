@@ -7,12 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "MobileNode.h"
+#import "MNScriptLoader.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [MobileNode developOnHost:@"localhost" port:8080];
     return YES;
 }
 							
