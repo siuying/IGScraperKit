@@ -10,6 +10,7 @@
 
 #ifdef IGSCRAPERKIT_JAVASCRIPT_ADDITIONS
 #import <JavaScriptCore/JavaScriptCore.h>
+#import "JSContext+OpalAdditions.h"
 
 @interface IGScraper()
 @property (nonatomic, strong) JSContext* jsContext;
@@ -80,6 +81,15 @@ NSString* const IGScraperErrorDomain = @"IGScraperError";
     self.scraperBlock = ^id(IGXMLNode* node){
         context[@"node"] = node;
         return [[context evaluateScript:javascript] toObject];
+    };
+}
+
+-(void) setScraperBlockWithRuby:(NSString*)ruby {
+    ruby = [@"node = $$['node']\n" stringByAppendingString:ruby];
+    __weak JSContext* context = self.jsContext;
+    self.scraperBlock = ^id(IGXMLNode* node){
+        context[@"node"] = node;
+        return [[context evaluateRuby:ruby] toObject];
     };
 }
 

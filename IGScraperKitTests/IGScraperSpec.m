@@ -44,6 +44,16 @@ describe(@"IGScraper", ^{
         });
     });
     
+    describe(@"-setScraperBlockWithRuby:", ^{
+        it(@"should create scraper with ruby", ^{
+            scraper = [[IGScraper alloc] init];
+            [scraper setScraperBlockWithRuby:@"node.queryWithXPath('//p').firstObject.text"];
+
+            NSString* text = [scraper scrape:@"<html><p>Hello World</p><p>Ha Ha!</p></html>"];
+            [[text should] equal:@"Hello World"];
+        });
+    });
+    
 });
 
 SPEC_END

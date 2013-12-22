@@ -60,6 +60,9 @@ NS_ENUM(NSInteger, IGScraperErrors) {
  Refer to ``scraperWithBlock:`` for details.
  */
 -(void) setScraperBlockWithJavaScript:(NSString*)javascript;
+
+-(void) setScraperBlockWithRuby:(NSString*)javascript;
+
 #endif
 
 @end
