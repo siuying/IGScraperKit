@@ -26,6 +26,20 @@ IGScraper* scraper = [IGScraper scraperWithJavaScript:@"node.queryWithXPath('//p
 
 To enable this, define IGSCRAPERKIT_JAVASCRIPT_ADDITIONS in your pch file or preprocessor macro before import IGScraper.
 
+## Installation
+
+To install IGScraperKit throught [CocoaPods](http://cocoapods.org/), add following lines to your Podfile:
+
+```ruby
+pod "IGScraperKit", :podspec => 'https://raw.github.com/siuying/IGScraperKit/master/IGScraperKit.podspec'
+```
+
+Or with JavaScript supports:
+
+```ruby
+pod "IGScraperKit/JavaScript", :podspec => 'https://raw.github.com/siuying/IGScraperKit/master/IGScraperKit.podspec'
+```
+
 ## Dependencies
 
 - IGScraperKit use IGHTMLQuery for HTML processing.
