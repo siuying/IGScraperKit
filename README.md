@@ -1,6 +1,6 @@
 # IGScraperKit
 
-Build Objective-C scraper.
+Create dynamic web scraper in Objective-C, using block or JavaScript.
 
 ## Usage
 
@@ -25,6 +25,11 @@ IGScraper* scraper = [IGScraper scraperWithJavaScript:@"node.queryWithXPath('//p
 ```
 
 To enable this, define IGSCRAPER_JAVASCRIPT_ADDITIONS in your pch file or preprocessor macro before import IGScraper.
+
+## Dependencies
+
+- IGScraperKit use IGHTMLQuery for HTML processing.
+- IGScraperKit optionally use JavaScriptCore in iOS 7 for JavaScript support.
 
 ## Development
 
