@@ -47,7 +47,7 @@ NS_ENUM(NSInteger, IGScraperErrors) {
  */
 -(id) scrape:(NSString*)html;
 
-#ifdef IGSCRAPER_JAVASCRIPT_ADDITIONS
+#ifdef IGSCRAPERKIT_JAVASCRIPT_ADDITIONS
 /**
  Create a scraper from JavaScript. Refer ``setScraperBlockWithJavaScript:`` for details.
 

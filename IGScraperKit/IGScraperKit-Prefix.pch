@@ -11,7 +11,7 @@
 #endif
 
 // following line enable JavaScript extensions
-#define IGSCRAPER_JAVASCRIPT_ADDITIONS
+#define IGSCRAPERKIT_JAVASCRIPT_ADDITIONS
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>

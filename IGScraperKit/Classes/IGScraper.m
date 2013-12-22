@@ -8,7 +8,7 @@
 
 #import "IGScraper.h"
 
-#ifdef IGSCRAPER_JAVASCRIPT_ADDITIONS
+#ifdef IGSCRAPERKIT_JAVASCRIPT_ADDITIONS
 #import <JavaScriptCore/JavaScriptCore.h>
 
 @interface IGScraper()
@@ -49,7 +49,7 @@ NSString* const IGScraperErrorDomain = @"IGScraperError";
     }
 }
 
-#ifdef IGSCRAPER_JAVASCRIPT_ADDITIONS
+#ifdef IGSCRAPERKIT_JAVASCRIPT_ADDITIONS
 #pragma mark - JavaScriptAdditions
 
 -(JSContext*) jsContext {

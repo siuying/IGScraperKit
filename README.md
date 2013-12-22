@@ -24,7 +24,7 @@ IGScraperKit supports JavaScriptCore from iOS 7, you can create scraper by using
 IGScraper* scraper = [IGScraper scraperWithJavaScript:@"node.queryWithXPath('//p').firstObject().text()"];
 ```
 
-To enable this, define IGSCRAPER_JAVASCRIPT_ADDITIONS in your pch file or preprocessor macro before import IGScraper.
+To enable this, define IGSCRAPERKIT_JAVASCRIPT_ADDITIONS in your pch file or preprocessor macro before import IGScraper.
 
 ## Dependencies
 
