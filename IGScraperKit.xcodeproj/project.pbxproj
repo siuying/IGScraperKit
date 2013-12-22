@@ -21,7 +21,9 @@
 		54432AF31865ABA000FBFDE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432ACF1865ABA000FBFDE4 /* Foundation.framework */; };
 		54432AF41865ABA000FBFDE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432AD31865ABA000FBFDE4 /* UIKit.framework */; };
 		54432AFC1865ABA000FBFDE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54432AFA1865ABA000FBFDE4 /* InfoPlist.strings */; };
-		54432AFE1865ABA000FBFDE4 /* IGScraperKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54432AFD1865ABA000FBFDE4 /* IGScraperKitTests.m */; };
+		54432AFE1865ABA000FBFDE4 /* IGScraperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54432AFD1865ABA000FBFDE4 /* IGScraperSpec.m */; };
+		54432B0D1866A37500FBFDE4 /* IGScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54432B0C1866A37500FBFDE4 /* IGScraper.m */; };
+		AD24B15C91AA4DEC93ECEE50 /* libPods-IGScraperKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D5E8FE119845E9B3BB3924 /* libPods-IGScraperKitTests.a */; };
 		F044C95A26F04452AF4D593E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C08D9C2321374CD6A8997A02 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -55,9 +57,13 @@
 		54432AF11865ABA000FBFDE4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		54432AF91865ABA000FBFDE4 /* IGScraperKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IGScraperKitTests-Info.plist"; sourceTree = "<group>"; };
 		54432AFB1865ABA000FBFDE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		54432AFD1865ABA000FBFDE4 /* IGScraperKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGScraperKitTests.m; sourceTree = "<group>"; };
+		54432AFD1865ABA000FBFDE4 /* IGScraperSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGScraperSpec.m; sourceTree = "<group>"; };
+		54432B0B1866A37500FBFDE4 /* IGScraper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGScraper.h; path = Classes/IGScraper.h; sourceTree = "<group>"; };
+		54432B0C1866A37500FBFDE4 /* IGScraper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGScraper.m; path = Classes/IGScraper.m; sourceTree = "<group>"; };
+		AE0B25CA9F78463AA14E9CEB /* Pods-IGScraperKitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGScraperKitTests.xcconfig"; path = "Pods/Pods-IGScraperKitTests.xcconfig"; sourceTree = "<group>"; };
 		BC17E94127D841A59446ECD7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C08D9C2321374CD6A8997A02 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6D5E8FE119845E9B3BB3924 /* libPods-IGScraperKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IGScraperKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 				54432AF21865ABA000FBFDE4 /* XCTest.framework in Frameworks */,
 				54432AF41865ABA000FBFDE4 /* UIKit.framework in Frameworks */,
 				54432AF31865ABA000FBFDE4 /* Foundation.framework in Frameworks */,
+				AD24B15C91AA4DEC93ECEE50 /* libPods-IGScraperKitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +100,7 @@
 				54432ACE1865ABA000FBFDE4 /* Frameworks */,
 				54432ACD1865ABA000FBFDE4 /* Products */,
 				BC17E94127D841A59446ECD7 /* Pods.xcconfig */,
+				AE0B25CA9F78463AA14E9CEB /* Pods-IGScraperKitTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +121,7 @@
 				54432AD31865ABA000FBFDE4 /* UIKit.framework */,
 				54432AF11865ABA000FBFDE4 /* XCTest.framework */,
 				C08D9C2321374CD6A8997A02 /* libPods.a */,
+				D6D5E8FE119845E9B3BB3924 /* libPods-IGScraperKitTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,7 +156,7 @@
 		54432AF71865ABA000FBFDE4 /* IGScraperKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				54432AFD1865ABA000FBFDE4 /* IGScraperKitTests.m */,
+				54432AFD1865ABA000FBFDE4 /* IGScraperSpec.m */,
 				54432AF81865ABA000FBFDE4 /* Supporting Files */,
 			);
 			path = IGScraperKitTests;
@@ -165,6 +174,8 @@
 		54432B071865ABA700FBFDE4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				54432B0B1866A37500FBFDE4 /* IGScraper.h */,
+				54432B0C1866A37500FBFDE4 /* IGScraper.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -195,9 +206,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54432B041865ABA000FBFDE4 /* Build configuration list for PBXNativeTarget "IGScraperKitTests" */;
 			buildPhases = (
+				30399FFFCEF5448E8660E37E /* Check Pods Manifest.lock */,
 				54432AEC1865ABA000FBFDE4 /* Sources */,
 				54432AED1865ABA000FBFDE4 /* Frameworks */,
 				54432AEE1865ABA000FBFDE4 /* Resources */,
+				D022801889A74E2EA1BE4E27 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,6 +278,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		30399FFFCEF5448E8660E37E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		6A42FC8652454FC1821AE538 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,6 +306,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D022801889A74E2EA1BE4E27 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-IGScraperKitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E37D0F3F884D4368867B8FAB /* Copy Pods Resources */ = {
@@ -304,6 +347,7 @@
 			files = (
 				54432AE91865ABA000FBFDE4 /* ViewController.m in Sources */,
 				54432AE01865ABA000FBFDE4 /* AppDelegate.m in Sources */,
+				54432B0D1866A37500FBFDE4 /* IGScraper.m in Sources */,
 				54432ADC1865ABA000FBFDE4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,7 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54432AFE1865ABA000FBFDE4 /* IGScraperKitTests.m in Sources */,
+				54432AFE1865ABA000FBFDE4 /* IGScraperSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +510,7 @@
 		};
 		54432B051865ABA000FBFDE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE0B25CA9F78463AA14E9CEB /* Pods-IGScraperKitTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IGScraperKit.app/IGScraperKit";
@@ -489,6 +534,7 @@
 		};
 		54432B061865ABA000FBFDE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE0B25CA9F78463AA14E9CEB /* Pods-IGScraperKitTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IGScraperKit.app/IGScraperKit";
