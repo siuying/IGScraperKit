@@ -20,7 +20,7 @@ DESC
   s.subspec "Core" do |sp|
     sp.ios.deployment_target = '6.0'
     sp.osx.deployment_target = '10.8'
-    sp.dependencies = 'IGHTMLQuery'
+    sp.dependency 'IGHTMLQuery'
     sp.source_files  = 'IGScraperKit/Classes/**/*.{h,m}'
   end
 
@@ -29,7 +29,7 @@ DESC
     sp.ios.deployment_target = '7.0'
     sp.osx.deployment_target = '10.8'
     sp.prefix_header_contents = '#define IGSCRAPER_JAVASCRIPT_ADDITIONS'
-    sp.dependencies = 'IGHTMLQuery/JavaScript'
+    sp.dependency 'IGHTMLQuery/JavaScript'
     sp.source_files  = 'IGScraperKit/Classes/**/*.{h,m}'
   end
 end
