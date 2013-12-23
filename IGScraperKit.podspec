@@ -17,6 +17,12 @@ DESC
 
   s.default_subspec = 'Core'
 
+  s.requires_arc = true
+
+  s.library   = 'xml2'
+
+  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
+
   s.subspec "Core" do |sp|
     sp.ios.deployment_target = '6.0'
     sp.osx.deployment_target = '10.8'
