@@ -15,7 +15,7 @@
 
 @interface IGScraper()
 @property (nonatomic, strong) JSContext* jsContext;
-@property (nonatomic, strong) JSValue* rubyEval;
+@property (nonatomic, strong) JSValue* scraperScope;
 @end
 #endif
 
@@ -34,12 +34,12 @@ NSString* const IGScraperErrorDomain = @"IGScraperError";
     return [[self alloc] initWithBlock:scraperBlock];
 }
 
--(id) scrape:(NSString*)html {
+-(id) scrapeWithHTML:(NSString*)html url:(NSString*)url {
     if (self.scraperBlock) {
         NSError* error;
         IGHTMLDocument* doc = [[IGHTMLDocument alloc] initWithHTMLString:html error:&error];
         if (error == nil) {
-            return self.scraperBlock(doc);
+            return self.scraperBlock(doc, url);
         } else {
             self.error = error;
             return nil;
@@ -72,12 +72,15 @@ NSString* const IGScraperErrorDomain = @"IGScraperError";
     return _jsContext;
 }
 
--(JSValue*) rubyEval {
-    if (!_rubyEval) {
+-(JSValue*) scraperScope {
+    if (!_scraperScope) {
         [self.jsContext configureIGHTMLQuery];
-        _rubyEval = [self.jsContext evaluateRuby:@"lambda { |doc, script| XMLNode.new(doc).instance_eval(&eval(\"lambda { #{script} }\")) }"];
+        NSString* path = [[NSBundle bundleForClass:[IGScraper class]] pathForResource:@"scraper_scope" ofType:@"rb"];
+        NSString* script = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+        [self.jsContext evaluateRuby:script];
+        _scraperScope = [self.jsContext evaluateScript:@"Opal.ScraperScope"];
     }
-    return _rubyEval;
+    return _scraperScope;
 }
 
 +(instancetype) scraperWithJavaScript:(NSString*)script {
@@ -94,16 +97,17 @@ NSString* const IGScraperErrorDomain = @"IGScraperError";
 
 -(void) setScraperBlockWithJavaScript:(NSString*)javascript {
     __weak JSContext* context = self.jsContext;
-    self.scraperBlock = ^id(IGXMLNode* node){
+    self.scraperBlock = ^id(IGXMLNode* node, NSString* url){
         context[@"node"] = node;
+        context[@"url"] = url;
         return [[context evaluateScript:javascript] toObject];
     };
 }
 
 -(void) setScraperBlockWithRuby:(NSString*)ruby {
-    __weak JSValue* rubyEval = self.rubyEval;
-    self.scraperBlock = ^id(IGXMLNode* node){
-        return [[rubyEval callWithArguments:@[node, ruby]] toObject];
+    __weak JSValue* scraperScope = self.scraperScope;
+    self.scraperBlock = ^id(IGXMLNode* node, NSString* url){
+        return [[scraperScope invokeMethod:@"$builder" withArguments:@[node, url, ruby]] toObject];
     };
 }
 

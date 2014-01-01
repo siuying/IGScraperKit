@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "IGHTMLQuery.h"
 
-typedef id (^IGScraperBlock)(IGXMLNode* node);
+typedef id (^IGScraperBlock)(IGXMLNode* node, NSString* url);
 
 extern NSString* const IGScraperErrorDomain;
 
@@ -42,10 +42,12 @@ NS_ENUM(NSInteger, IGScraperErrors) {
 
 /**
  Scrape the HTML.
+ @param html HTML string
+ @param url URL string of the page to be parsed
 
  @return object as processed by `scraperBlock`.
  */
--(id) scrape:(NSString*)html;
+-(id) scrapeWithHTML:(NSString*)html url:(NSString*)url;
 
 #ifdef IGSCRAPERKIT_ENABLE_SCRIPTING
 /**
