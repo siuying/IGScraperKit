@@ -16,6 +16,8 @@ DESC
   s.source       = { :git => "https://github.com/siuying/IGScraperKit.git", :tag => s.version.to_s }
 
   s.default_subspec = 'Core'
+  s.ios.deployment_target = '7.0'
+  s.osx.deployment_target = '10.9'
 
   s.requires_arc = true
 
@@ -26,16 +28,17 @@ DESC
   s.subspec "Core" do |sp|
     sp.ios.deployment_target = '6.0'
     sp.osx.deployment_target = '10.8'
-    sp.dependency 'IGHTMLQuery'
+    sp.dependency 'IGHTMLQuery', '~> 0.6.2'
     sp.source_files  = 'IGScraperKit/Classes/**/*.{h,m}'
   end
 
-  # Include IGHTMLQuery/JavaScript to enable JavaScriptCore support.
-  s.subspec "JavaScript" do |sp|
+  # Include IGScraperKit/Scripting to enable Scripting support.
+  s.subspec "Scripting" do |sp|
     sp.ios.deployment_target = '7.0'
-    sp.osx.deployment_target = '10.8'
-    sp.prefix_header_contents = '#define IGSCRAPER_JAVASCRIPT_ADDITIONS'
-    sp.dependency 'IGHTMLQuery/JavaScript'
+    sp.osx.deployment_target = '10.9'
+    sp.prefix_header_contents = "#define IGSCRAPERKIT_ENABLE_SCRIPTING"
+    sp.dependency 'IGHTMLQuery/Ruby', '~> 0.6.2'
+    sp.dependency 'JavaScriptCoreOpalAdditions', '~> 0.2.1'
     sp.source_files  = 'IGScraperKit/Classes/**/*.{h,m}'
   end
 end

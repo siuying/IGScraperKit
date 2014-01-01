@@ -18,13 +18,17 @@ Then scrape HTML with scraper:
 [scraper scrape:@"<html><p>Hello World</p></html>"];
 ```
 
-IGScraperKit supports JavaScriptCore from iOS 7, you can create scraper by using JavaScript:
+IGScraperKit supports JavaScriptCore from iOS 7, you can create scraper by using JavaScript or Ruby:
 
-```
+```javascript
 IGScraper* scraper = [IGScraper scraperWithJavaScript:@"node.queryWithXPath('//p').firstObject().text()"];
 ```
 
-To enable this, define IGSCRAPERKIT_JAVASCRIPT_ADDITIONS in your pch file or preprocessor macro before import IGScraper.
+```ruby
+IGScraper* scraper = [IGScraper scraperWithRuby:@"self.xpath('//p').first.text"];
+```
+
+To enable this, define IGSCRAPERKIT_ENABLE_SCRIPTING in your pch file or preprocessor macro before import IGScraper.
 
 ## Installation
 

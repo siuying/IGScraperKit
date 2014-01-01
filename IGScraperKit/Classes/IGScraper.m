@@ -8,11 +8,14 @@
 
 #import "IGScraper.h"
 
-#ifdef IGSCRAPERKIT_JAVASCRIPT_ADDITIONS
+#ifdef IGSCRAPERKIT_ENABLE_SCRIPTING
 #import <JavaScriptCore/JavaScriptCore.h>
+#import "JSContext+OpalAdditions.h"
+#import "JSContext+IGHTMLQueryRubyAdditions.h"
 
 @interface IGScraper()
 @property (nonatomic, strong) JSContext* jsContext;
+@property (nonatomic, strong) JSValue* rubyEval;
 @end
 #endif
 
@@ -49,7 +52,7 @@ NSString* const IGScraperErrorDomain = @"IGScraperError";
     }
 }
 
-#ifdef IGSCRAPERKIT_JAVASCRIPT_ADDITIONS
+#ifdef IGSCRAPERKIT_ENABLE_SCRIPTING
 #pragma mark - JavaScriptAdditions
 
 -(JSContext*) jsContext {
@@ -69,9 +72,23 @@ NSString* const IGScraperErrorDomain = @"IGScraperError";
     return _jsContext;
 }
 
+-(JSValue*) rubyEval {
+    if (!_rubyEval) {
+        [self.jsContext configureIGHTMLQuery];
+        _rubyEval = [self.jsContext evaluateRuby:@"lambda { |doc, script| XMLNode.new(doc).instance_eval(&eval(\"lambda { #{script} }\")) }"];
+    }
+    return _rubyEval;
+}
+
 +(instancetype) scraperWithJavaScript:(NSString*)script {
     IGScraper* scraper = [[self alloc] init];
     [scraper setScraperBlockWithJavaScript:script];
+    return scraper;
+}
+
++(instancetype) scraperWithRuby:(NSString*)ruby {
+    IGScraper* scraper = [[self alloc] init];
+    [scraper setScraperBlockWithRuby:ruby];
     return scraper;
 }
 
@@ -80,6 +97,13 @@ NSString* const IGScraperErrorDomain = @"IGScraperError";
     self.scraperBlock = ^id(IGXMLNode* node){
         context[@"node"] = node;
         return [[context evaluateScript:javascript] toObject];
+    };
+}
+
+-(void) setScraperBlockWithRuby:(NSString*)ruby {
+    __weak JSValue* rubyEval = self.rubyEval;
+    self.scraperBlock = ^id(IGXMLNode* node){
+        return [[rubyEval callWithArguments:@[node, ruby]] toObject];
     };
 }
 

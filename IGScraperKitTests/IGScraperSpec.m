@@ -42,6 +42,13 @@ describe(@"IGScraper", ^{
             [[text should] beNil];
             [[scraper.error shouldNot] beNil];
         });
+
+        it(@"should scrape html with Ruby", ^{
+            scraper = [IGScraper scraperWithRuby:@"self.xpath('//p').first.text"];
+
+            NSString* text = [scraper scrape:@"<html><p>Hello World</p></html>"];
+            [[text should] equal:@"Hello World"];
+        });
     });
     
 });
