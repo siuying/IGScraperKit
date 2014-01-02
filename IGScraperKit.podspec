@@ -30,6 +30,7 @@ DESC
     sp.osx.deployment_target = '10.8'
     sp.dependency 'IGHTMLQuery', '~> 0.6.3'
     sp.source_files  = 'IGScraperKit/Classes/**/*.{h,m}'
+    sp.exclude_files  = 'IGScraperKit/Classes/JSContext+IGScraper.{h,m}'
   end
 
   # Include IGScraperKit/Scripting to enable Scripting support.
