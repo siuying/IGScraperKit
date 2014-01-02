@@ -25,6 +25,7 @@
 		54432AFC1865ABA000FBFDE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54432AFA1865ABA000FBFDE4 /* InfoPlist.strings */; };
 		54432AFE1865ABA000FBFDE4 /* IGScraperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54432AFD1865ABA000FBFDE4 /* IGScraperSpec.m */; };
 		54432B0D1866A37500FBFDE4 /* IGScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54432B0C1866A37500FBFDE4 /* IGScraper.m */; };
+		5454348218751DA100B6795A /* JSContext+IGScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5454348118751DA100B6795A /* JSContext+IGScraper.m */; };
 		AD24B15C91AA4DEC93ECEE50 /* libPods-IGScraperKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D5E8FE119845E9B3BB3924 /* libPods-IGScraperKitTests.a */; };
 		F044C95A26F04452AF4D593E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C08D9C2321374CD6A8997A02 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,8 @@
 		54432AFD1865ABA000FBFDE4 /* IGScraperSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGScraperSpec.m; sourceTree = "<group>"; };
 		54432B0B1866A37500FBFDE4 /* IGScraper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGScraper.h; path = Classes/IGScraper.h; sourceTree = "<group>"; };
 		54432B0C1866A37500FBFDE4 /* IGScraper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGScraper.m; path = Classes/IGScraper.m; sourceTree = "<group>"; };
+		5454348018751DA100B6795A /* JSContext+IGScraper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "JSContext+IGScraper.h"; path = "Classes/JSContext+IGScraper.h"; sourceTree = "<group>"; };
+		5454348118751DA100B6795A /* JSContext+IGScraper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "JSContext+IGScraper.m"; path = "Classes/JSContext+IGScraper.m"; sourceTree = "<group>"; };
 		AE0B25CA9F78463AA14E9CEB /* Pods-IGScraperKitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGScraperKitTests.xcconfig"; path = "Pods/Pods-IGScraperKitTests.xcconfig"; sourceTree = "<group>"; };
 		BC17E94127D841A59446ECD7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C08D9C2321374CD6A8997A02 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +203,8 @@
 			children = (
 				54432B0B1866A37500FBFDE4 /* IGScraper.h */,
 				54432B0C1866A37500FBFDE4 /* IGScraper.m */,
+				5454348018751DA100B6795A /* JSContext+IGScraper.h */,
+				5454348118751DA100B6795A /* JSContext+IGScraper.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 				54432AE91865ABA000FBFDE4 /* ViewController.m in Sources */,
 				54432AE01865ABA000FBFDE4 /* AppDelegate.m in Sources */,
 				542C23DE187511A50046B93A /* scraper_kit.js in Sources */,
+				5454348218751DA100B6795A /* JSContext+IGScraper.m in Sources */,
 				54432B0D1866A37500FBFDE4 /* IGScraper.m in Sources */,
 				54432ADC1865ABA000FBFDE4 /* main.m in Sources */,
 			);

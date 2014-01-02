@@ -12,6 +12,7 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "JSContext+OpalAdditions.h"
 #import "JSContext+IGHTMLQueryRubyAdditions.h"
+#import "JSContext+IGScraper.h"
 
 @interface IGScraper()
 @property (nonatomic, strong) JSContext* jsContext;
@@ -74,11 +75,7 @@ NSString* const IGScraperErrorDomain = @"IGScraperError";
 
 -(JSValue*) scraperScope {
     if (!_scraperScope) {
-        [self.jsContext configureIGHTMLQuery];
-
-        NSString* path = [[NSBundle bundleForClass:[IGScraper class]] pathForResource:@"scraper_kit" ofType:@"js"];
-        NSString* script = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-        [self.jsContext evaluateScript:script];
+        [self.jsContext configureScraperKit];
         _scraperScope = [self.jsContext evaluateScript:@"Opal.ScraperScope"];
     }
     return _scraperScope;
