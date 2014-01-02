@@ -1,6 +1,7 @@
 #import "IGScraper.h"
 #import "IGXMLNode.h"
 #import "Kiwi.h"
+#import <JavaScriptCore/JavaScriptCore.h>
 
 SPEC_BEGIN(IGScraperSpec)
 
@@ -55,6 +56,17 @@ describe(@"IGScraper", ^{
             NSString* text = [scraper scrapeWithHTML:@"<html><p>Hello World</p></html>" url:@"http://www.google.com/1.html"];
             [[text should] equal:@"Hello World"];
             [[scraper.error should] beNil];
+        });
+
+        it(@"should scrape html and return array with Ruby", ^{
+            scraper = [IGScraper scraperWithRuby:@"[node.xpath('//p').first.text, url]"];
+            NSArray* array = [scraper scrapeWithHTML:@"<html><p>Hello World</p></html>" url:@"http://www.google.com/1.html"];
+            
+            NSString* name = array[0];
+            [[name should] equal:@"Hello World"];
+
+            NSString* url = array[1];
+            [[url should] equal:@"http://www.google.com/1.html"];
         });
 
         it(@"should access URL within Ruby", ^{

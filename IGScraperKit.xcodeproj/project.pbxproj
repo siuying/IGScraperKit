@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		542C23DE187511A50046B93A /* scraper_kit.js in Sources */ = {isa = PBXBuildFile; fileRef = 542C23DC1875119A0046B93A /* scraper_kit.js */; };
-		542C23DF187511C20046B93A /* scraper_kit.js in Resources */ = {isa = PBXBuildFile; fileRef = 542C23DC1875119A0046B93A /* scraper_kit.js */; };
 		54432AD01865ABA000FBFDE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432ACF1865ABA000FBFDE4 /* Foundation.framework */; };
 		54432AD21865ABA000FBFDE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432AD11865ABA000FBFDE4 /* CoreGraphics.framework */; };
 		54432AD41865ABA000FBFDE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432AD31865ABA000FBFDE4 /* UIKit.framework */; };
@@ -289,7 +288,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				542C23DF187511C20046B93A /* scraper_kit.js in Resources */,
 				54432AE61865ABA000FBFDE4 /* Main_iPad.storyboard in Resources */,
 				54432AEB1865ABA000FBFDE4 /* Images.xcassets in Resources */,
 				54432AE31865ABA000FBFDE4 /* Main_iPhone.storyboard in Resources */,
