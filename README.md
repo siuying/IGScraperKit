@@ -38,10 +38,10 @@ To install IGScraperKit throught [CocoaPods](http://cocoapods.org/), add followi
 pod "IGScraperKit", :podspec => 'https://raw.github.com/siuying/IGScraperKit/master/IGScraperKit.podspec'
 ```
 
-Or with JavaScript supports:
+Or with JavaScript/Ruby supports:
 
 ```ruby
-pod "IGScraperKit/JavaScript", :podspec => 'https://raw.github.com/siuying/IGScraperKit/master/IGScraperKit.podspec'
+pod "IGScraperKit/Scripting", :podspec => 'https://raw.github.com/siuying/IGScraperKit/master/IGScraperKit.podspec'
 ```
 
 ## Dependencies
