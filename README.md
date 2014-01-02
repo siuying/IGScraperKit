@@ -25,7 +25,7 @@ IGScraper* scraper = [IGScraper scraperWithJavaScript:@"node.queryWithXPath('//p
 ```
 
 ```ruby
-IGScraper* scraper = [IGScraper scraperWithRuby:@"self.xpath('//p').first.text"];
+IGScraper* scraper = [IGScraper scraperWithRuby:@"node.xpath('//p').first.text"];
 ```
 
 To enable this, define IGSCRAPERKIT_ENABLE_SCRIPTING in your pch file or preprocessor macro before import IGScraper.
