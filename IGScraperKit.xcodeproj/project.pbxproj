@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		542C23C8187422A60046B93A /* scraper_scope.rb in Resources */ = {isa = PBXBuildFile; fileRef = 542C23C7187422A60046B93A /* scraper_scope.rb */; };
-		542C23C9187422A60046B93A /* scraper_scope.rb in Resources */ = {isa = PBXBuildFile; fileRef = 542C23C7187422A60046B93A /* scraper_scope.rb */; };
+		542C23DE187511A50046B93A /* scraper_kit.js in Sources */ = {isa = PBXBuildFile; fileRef = 542C23DC1875119A0046B93A /* scraper_kit.js */; };
+		542C23DF187511C20046B93A /* scraper_kit.js in Resources */ = {isa = PBXBuildFile; fileRef = 542C23DC1875119A0046B93A /* scraper_kit.js */; };
 		54432AD01865ABA000FBFDE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432ACF1865ABA000FBFDE4 /* Foundation.framework */; };
 		54432AD21865ABA000FBFDE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432AD11865ABA000FBFDE4 /* CoreGraphics.framework */; };
 		54432AD41865ABA000FBFDE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432AD31865ABA000FBFDE4 /* UIKit.framework */; };
@@ -40,7 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		542C23C7187422A60046B93A /* scraper_scope.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = scraper_scope.rb; path = Classes/scraper_scope.rb; sourceTree = "<group>"; };
+		542C23D918750E4A0046B93A /* scraper_scope.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = scraper_scope.rb; sourceTree = "<group>"; };
+		542C23DC1875119A0046B93A /* scraper_kit.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = scraper_kit.js; sourceTree = "<group>"; };
+		542C23DD187511A20046B93A /* scraper_kit.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = scraper_kit.rb; sourceTree = "<group>"; };
 		54432ACC1865ABA000FBFDE4 /* IGScraperKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGScraperKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54432ACF1865ABA000FBFDE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		54432AD11865ABA000FBFDE4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,6 +97,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		542C23D618750E4A0046B93A /* JavaScript */ = {
+			isa = PBXGroup;
+			children = (
+				542C23DC1875119A0046B93A /* scraper_kit.js */,
+			);
+			path = JavaScript;
+			sourceTree = "<group>";
+		};
+		542C23D818750E4A0046B93A /* Ruby */ = {
+			isa = PBXGroup;
+			children = (
+				542C23DD187511A20046B93A /* scraper_kit.rb */,
+				542C23D918750E4A0046B93A /* scraper_scope.rb */,
+			);
+			path = Ruby;
+			sourceTree = "<group>";
+		};
 		54432AC31865ABA000FBFDE4 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +151,8 @@
 		54432AD51865ABA000FBFDE4 /* IGScraperKit */ = {
 			isa = PBXGroup;
 			children = (
+				542C23D618750E4A0046B93A /* JavaScript */,
+				542C23D818750E4A0046B93A /* Ruby */,
 				54432B071865ABA700FBFDE4 /* Classes */,
 				54432ADE1865ABA000FBFDE4 /* AppDelegate.h */,
 				54432ADF1865ABA000FBFDE4 /* AppDelegate.m */,
@@ -179,7 +200,6 @@
 			children = (
 				54432B0B1866A37500FBFDE4 /* IGScraper.h */,
 				54432B0C1866A37500FBFDE4 /* IGScraper.m */,
-				542C23C7187422A60046B93A /* scraper_scope.rb */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -264,7 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				542C23C8187422A60046B93A /* scraper_scope.rb in Resources */,
+				542C23DF187511C20046B93A /* scraper_kit.js in Resources */,
 				54432AE61865ABA000FBFDE4 /* Main_iPad.storyboard in Resources */,
 				54432AEB1865ABA000FBFDE4 /* Images.xcassets in Resources */,
 				54432AE31865ABA000FBFDE4 /* Main_iPhone.storyboard in Resources */,
@@ -277,7 +297,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				54432AFC1865ABA000FBFDE4 /* InfoPlist.strings in Resources */,
-				542C23C9187422A60046B93A /* scraper_scope.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +372,7 @@
 			files = (
 				54432AE91865ABA000FBFDE4 /* ViewController.m in Sources */,
 				54432AE01865ABA000FBFDE4 /* AppDelegate.m in Sources */,
+				542C23DE187511A50046B93A /* scraper_kit.js in Sources */,
 				54432B0D1866A37500FBFDE4 /* IGScraper.m in Sources */,
 				54432ADC1865ABA000FBFDE4 /* main.m in Sources */,
 			);

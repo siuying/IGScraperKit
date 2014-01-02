@@ -75,9 +75,10 @@ NSString* const IGScraperErrorDomain = @"IGScraperError";
 -(JSValue*) scraperScope {
     if (!_scraperScope) {
         [self.jsContext configureIGHTMLQuery];
-        NSString* path = [[NSBundle bundleForClass:[IGScraper class]] pathForResource:@"scraper_scope" ofType:@"rb"];
+
+        NSString* path = [[NSBundle bundleForClass:[IGScraper class]] pathForResource:@"scraper_kit" ofType:@"js"];
         NSString* script = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-        [self.jsContext evaluateRuby:script];
+        [self.jsContext evaluateScript:script];
         _scraperScope = [self.jsContext evaluateScript:@"Opal.ScraperScope"];
     }
     return _scraperScope;
