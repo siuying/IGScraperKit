@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name         = "IGScraperKit"
   s.version      = "0.3.0"
-  s.summary      = "Create dynamic web scraper in Objective-C, using block or JavaScript."
+  s.summary      = "Create dynamic web scraper in Objective-C or Ruby."
 
   s.description  = <<-DESC
-Create dynamic web scraper in Objective-C, using block or JavaScript.
+Create dynamic web scraper in Objective-C or Ruby. You can define recipes in Ruby, load and modify them in runtime.
 DESC
 
   s.homepage     = "https://github.com/siuying/IGScraperKit"
