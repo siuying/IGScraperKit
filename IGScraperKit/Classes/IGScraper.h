@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IGScraperDelegate.h"
 
 @class IGXMLNode;
 
@@ -16,13 +17,18 @@ extern NSString* const IGScraperErrorDomain;
 
 NS_ENUM(NSInteger, IGScraperErrors) {
     IGScraperErrorUndefinedScraperBlock = 1,
-    IGScraperErrorJavaScriptError = 2
+    IGScraperErrorScriptingError = 2
 };
 
 /**
  A IGScraper can scrape a HTML page and return arbitary object.
  */
-@protocol IGScraper
+@protocol IGScraping
+
+/**
+ A delegate that notify success or error of scraping.
+ */
+@property (nonatomic, weak) id<IGScraperDelegate> delegate;
 
 /**
  Scrape the HTML.
@@ -37,7 +43,9 @@ NS_ENUM(NSInteger, IGScraperErrors) {
 
 /**
  */
-@interface IGScraper : NSObject <IGScraper>
+@interface IGScraper : NSObject <IGScraping>
+
+@property (nonatomic, weak) id<IGScraperDelegate> delegate;
 
 /**
  A block to scrape the HTML.

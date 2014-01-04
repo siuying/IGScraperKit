@@ -27,13 +27,16 @@
     return self;
 }
 
--(void) loadRecipe:(NSString*)rubyRecipe {
+-(void) loadRecipe:(NSString*)rubyRecipe error:(NSError* __autoreleasing *)error {
     if (!rubyRecipe) {
         [NSException raise:NSInvalidArgumentException format:@"recipe cannot be nil"];
     }
 
     [self.context evaluateRuby:rubyRecipe];
-    NSAssert(rubyRecipe != nil, @"error loading %@", rubyRecipe);
+    NSError* jsError = [self jsError];
+    if (jsError && error) {
+        *error = jsError;
+    }
 }
 
 -(NSArray*) recipes {
@@ -67,22 +70,45 @@
 -(id) scrapeWithHTML:(NSString*)html url:(NSString*)url {
     JSValue* scraper = [[self recipeRegistry] invokeMethod:@"$scraper_for_url" withArguments:@[url]];
     if ([scraper isUndefined] || [scraper isNull] || [[scraper invokeMethod:@"$to_n" withArguments:@[]] isNull]) {
+        NSError* error = [self jsError];
+        if (error && self.delegate && [self.delegate respondsToSelector:@selector(scraper:scrapeDidFailed:)]) {
+            [self.delegate scraper:self scrapeDidFailed:error];
+        }
         return nil;
         
     } else {
-        IGHTMLDocument* doc = [[IGHTMLDocument alloc] initWithHTMLString:html error:nil];
-        JSValue* xmlNode = [[[scraper context] evaluateRuby:@"lambda {|node| XMLNode.new(node) }"] callWithArguments:@[doc]];
-        JSValue* value = [scraper invokeMethod:@"$scrape" withArguments:@[xmlNode, url]];
-        if ([value isNull] || [value isUndefined]) {
-            return nil;
-        } else {
-            JSValue* nativeValue = [value invokeMethod:@"$to_n" withArguments:@[]];
-            if ([nativeValue isNull] || [nativeValue isUndefined]) {
+        NSError* error;
+        IGHTMLDocument* doc = [[IGHTMLDocument alloc] initWithHTMLString:html error:&error];
+        if (error == nil) {
+            JSValue* xmlNode = [[[scraper context] evaluateRuby:@"lambda {|node| XMLNode.new(node) }"] callWithArguments:@[doc]];
+            JSValue* value = [scraper invokeMethod:@"$scrape" withArguments:@[xmlNode, url]];
+            if ([value isNull] || [value isUndefined]) {
+                NSError* error = [self jsError];
+                if (error && self.delegate && [self.delegate respondsToSelector:@selector(scraper:scrapeDidFailed:)]) {
+                    [self.delegate scraper:self scrapeDidFailed:error];
+                }
+
                 return nil;
             } else {
-                return [nativeValue toObject];
+                JSValue* nativeValue = [value invokeMethod:@"$to_n" withArguments:@[]];
+                if ([nativeValue isNull] || [nativeValue isUndefined]) {
+                    NSError* error = [self jsError];
+                    if (error && self.delegate && [self.delegate respondsToSelector:@selector(scraper:scrapeDidFailed:)]) {
+                        [self.delegate scraper:self scrapeDidFailed:error];
+                    }
+
+                    return nil;
+                } else {
+                    return [nativeValue toObject];
+                }
             }
+        } else {
+            if (self.delegate && [self.delegate respondsToSelector:@selector(scraper:scrapeDidFailed:)]) {
+                [self.delegate scraper:self scrapeDidFailed:error];
+            }
+            return nil;
         }
+
     }
 }
 
@@ -108,6 +134,16 @@
         _recipeRegistry = [self.context evaluateScript:@"Opal.ScraperKit.RecipeRegistry.$instance()"];
     }
     return _recipeRegistry;
+}
+
+-(NSError*) jsError {
+    if (self.context.exception) {
+        return [NSError errorWithDomain:IGScraperErrorDomain
+                            code:IGScraperErrorScriptingError
+                        userInfo:@{@"description": [NSString stringWithFormat:@"%@", [self.context.exception toString]]}];
+    } else {
+        return nil;
+    }
 }
 
 @end

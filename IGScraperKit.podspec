@@ -28,7 +28,8 @@ DESC
   s.subspec "Core" do |sp|
     sp.ios.deployment_target = '6.0'
     sp.osx.deployment_target = '10.8'
-    sp.dependency 'IGHTMLQuery', '~> 0.6.3'
+
+    sp.dependency 'IGHTMLQuery', '~> 0.6.4'
     sp.source_files  = 'IGScraperKit/Classes/**/*.{h,m}'
     sp.exclude_files  = 'IGScraperKit/Classes/IGRecipeRegistry.{h,m}'
   end
@@ -38,8 +39,10 @@ DESC
     sp.ios.deployment_target = '7.0'
     sp.osx.deployment_target = '10.9'
     sp.prefix_header_contents = "#define IGSCRAPERKIT_ENABLE_SCRIPTING"
-    sp.dependency 'IGHTMLQuery/Ruby', '~> 0.6.2'
-    sp.dependency 'JavaScriptCoreOpalAdditions', '~> 0.2.2'
+
+    sp.dependency 'IGHTMLQuery', '~> 0.6.4'
+    sp.dependency 'IGHTMLQuery/Ruby', '~> 0.6.4'
+    sp.dependency 'JavaScriptCoreOpalAdditions', '~> 0.2.3'
     sp.source_files  = 'IGScraperKit/Classes/**/*.{h,m}'
     sp.resources  = 'IGScraperKit/JavaScript/**/*.{js}'
   end

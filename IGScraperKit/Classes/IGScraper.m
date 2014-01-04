@@ -29,7 +29,11 @@ NSString* const IGScraperErrorDomain = @"IGScraperError";
         NSError* error;
         IGHTMLDocument* doc = [[IGHTMLDocument alloc] initWithHTMLString:html error:&error];
         if (error == nil) {
-            return self.scraperBlock(doc, url);
+            id result = self.scraperBlock(doc, url);
+            if (self.delegate) {
+                [self.delegate scraper:self scrapeDidSucceed:result];
+            }
+            return result;
         } else {
             self.error = error;
             return nil;
@@ -38,6 +42,9 @@ NSString* const IGScraperErrorDomain = @"IGScraperError";
         NSError* error = [NSError errorWithDomain:IGScraperErrorDomain
                                              code:IGScraperErrorUndefinedScraperBlock userInfo:nil];
         self.error = error;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(scraper:scrapeDidFailed:)]) {
+            [self.delegate scraper:self scrapeDidFailed:error];
+        }
         return nil;
     }
 }

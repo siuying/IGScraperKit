@@ -8,7 +8,7 @@ Create a scraper:
 
 ```objective-c
 #import "IGScraperKit.h"
-IGScraper* scraper = [IGScraper scraperWithBlock:^id(IGXMLNode* node) {
+IGScraper* scraper = [IGScraper scraperWithBlock:^id(IGXMLNode* node, NSString* url) {
                 return [[[node queryWithXPath:@"//p"] firstObject] text];
             }];
 ```

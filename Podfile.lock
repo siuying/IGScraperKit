@@ -1,9 +1,9 @@
 PODS:
-  - IGHTMLQuery/JavaScript (0.6.3)
-  - IGHTMLQuery/Ruby (0.6.3):
+  - IGHTMLQuery/JavaScript (0.6.4)
+  - IGHTMLQuery/Ruby (0.6.4):
     - IGHTMLQuery/JavaScript
     - JavaScriptCoreOpalAdditions (>= 0.2.2)
-  - JavaScriptCoreOpalAdditions (0.2.2)
+  - JavaScriptCoreOpalAdditions (0.2.3)
   - Kiwi/ARC (2.2.3)
   - Kiwi/NonARC (2.2.3)
   - Kiwi/XCTest (2.2.3):
@@ -11,13 +11,13 @@ PODS:
     - Kiwi/NonARC
 
 DEPENDENCIES:
-  - IGHTMLQuery/Ruby (= 0.6.3)
-  - JavaScriptCoreOpalAdditions (~> 0.2.2)
+  - IGHTMLQuery/Ruby (~> 0.6.4)
+  - JavaScriptCoreOpalAdditions (~> 0.2.3)
   - Kiwi/XCTest
 
 SPEC CHECKSUMS:
-  IGHTMLQuery: 683a02a076e2916951c833b4fa43f732a68acf21
-  JavaScriptCoreOpalAdditions: 6bcd360d4fd2ccd81b929a80c32cb8a0afb4bf71
+  IGHTMLQuery: 43800bd5a78d784aeb78bd65b82589d0e231be3b
+  JavaScriptCoreOpalAdditions: a996ff2e4576307f8fdb38cacd9bf2e3d614f5b8
   Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
 
 COCOAPODS: 0.29.0

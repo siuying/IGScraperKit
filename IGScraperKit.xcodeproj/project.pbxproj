@@ -16,6 +16,7 @@
 		541AB8931877A9370017F86E /* walmart.html in Resources */ = {isa = PBXBuildFile; fileRef = 541AB8921877A9370017F86E /* walmart.html */; };
 		541AB8951877B3AB0017F86E /* google.rb in Resources */ = {isa = PBXBuildFile; fileRef = 541AB8941877B3AB0017F86E /* google.rb */; };
 		541AB8971877B4200017F86E /* google.html in Resources */ = {isa = PBXBuildFile; fileRef = 541AB8961877B4200017F86E /* google.html */; };
+		541AB89B1877C5BE0017F86E /* broken.rb in Resources */ = {isa = PBXBuildFile; fileRef = 541AB89A1877C5BE0017F86E /* broken.rb */; };
 		54432AD01865ABA000FBFDE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432ACF1865ABA000FBFDE4 /* Foundation.framework */; };
 		54432AD21865ABA000FBFDE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432AD11865ABA000FBFDE4 /* CoreGraphics.framework */; };
 		54432AD41865ABA000FBFDE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432AD31865ABA000FBFDE4 /* UIKit.framework */; };
@@ -58,6 +59,8 @@
 		541AB8941877B3AB0017F86E /* google.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = google.rb; sourceTree = "<group>"; };
 		541AB8961877B4200017F86E /* google.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = google.html; path = Fixtures/google.html; sourceTree = "<group>"; };
 		541AB8981877B6A50017F86E /* IGScraperKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IGScraperKit.h; path = Classes/IGScraperKit.h; sourceTree = "<group>"; };
+		541AB8991877C0610017F86E /* IGScraperDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IGScraperDelegate.h; path = Classes/IGScraperDelegate.h; sourceTree = "<group>"; };
+		541AB89A1877C5BE0017F86E /* broken.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = broken.rb; sourceTree = "<group>"; };
 		542C23DC1875119A0046B93A /* scraper_kit.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = scraper_kit.js; sourceTree = "<group>"; };
 		542C23DD187511A20046B93A /* scraper_kit.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = scraper_kit.rb; sourceTree = "<group>"; };
 		54432ACC1865ABA000FBFDE4 /* IGScraperKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGScraperKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +141,7 @@
 			children = (
 				541AB8901877A92E0017F86E /* walmart.rb */,
 				541AB8941877B3AB0017F86E /* google.rb */,
+				541AB89A1877C5BE0017F86E /* broken.rb */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -249,6 +253,7 @@
 				541AB8981877B6A50017F86E /* IGScraperKit.h */,
 				54432B0B1866A37500FBFDE4 /* IGScraper.h */,
 				54432B0C1866A37500FBFDE4 /* IGScraper.m */,
+				541AB8991877C0610017F86E /* IGScraperDelegate.h */,
 				541AB88218779F840017F86E /* IGRecipeRegistry.h */,
 				541AB88318779F840017F86E /* IGRecipeRegistry.m */,
 			);
@@ -353,6 +358,7 @@
 				54432AFC1865ABA000FBFDE4 /* InfoPlist.strings in Resources */,
 				541AB8951877B3AB0017F86E /* google.rb in Resources */,
 				541AB8931877A9370017F86E /* walmart.html in Resources */,
+				541AB89B1877C5BE0017F86E /* broken.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

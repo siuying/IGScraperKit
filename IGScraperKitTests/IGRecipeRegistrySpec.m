@@ -33,8 +33,16 @@ describe(@"IGRecipeRegistry", ^{
 
     describe(@"-loadRecipe:", ^{
         it(@"should load a ruby recipe", ^{
-            [registry loadRecipe:Recipe(@"walmart")];
+            [registry loadRecipe:Recipe(@"walmart") error:nil];
             [[[registry should] have:1] recipes];
+        });
+        
+        it(@"should return error on broken spec", ^{
+            NSError* error;
+            [registry loadRecipe:Recipe(@"broken") error:&error];
+            [[error shouldNot] beNil];
+            [[theValue(error.code) should] equal:theValue(IGScraperErrorScriptingError)];
+            [[[error domain] should] equal:IGScraperErrorDomain];
         });
     });
     
@@ -42,7 +50,7 @@ describe(@"IGRecipeRegistry", ^{
         it(@"should scrape and return hash (dictionary)", ^{
             NSString* html = HTML(@"walmart");
             NSString* url = @"http://www.walmart.com/search/search-ng.do?search_constraint=0&ic=48_0&search_query=batman&Find.x=0&Find.y=0&Find=Find%22";
-            [registry loadRecipe:Recipe(@"walmart")];
+            [registry loadRecipe:Recipe(@"walmart") error:nil];
             NSDictionary* result = [registry scrapeWithHTML:html url:url];
             [[result shouldNot] beNil];
             [[result should] beKindOfClass:[NSDictionary class]];
@@ -54,7 +62,7 @@ describe(@"IGRecipeRegistry", ^{
         it(@"should scrape and return aray", ^{
             NSString* html = HTML(@"google");
             NSString* url = @"https://www.google.com/search?q=doughnuts";
-            [registry loadRecipe:Recipe(@"google")];
+            [registry loadRecipe:Recipe(@"google") error:nil];
 
             NSArray* result = [registry scrapeWithHTML:html url:url];
             [[result shouldNot] beNil];

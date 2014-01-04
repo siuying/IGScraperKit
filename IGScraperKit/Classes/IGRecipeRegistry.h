@@ -9,13 +9,16 @@
 #import <Foundation/Foundation.h>
 
 #import "IGScraper.h"
+#import "IGScraperDelegate.h"
 
 /**
  IGRecipeRegistry load recipes defined in ruby class, and find scrapers defined in recipes.
  */
-@interface IGRecipeRegistry : NSObject <IGScraper>
+@interface IGRecipeRegistry : NSObject <IGScraping>
 
--(void) loadRecipe:(NSString*)rubyRecipe;
+@property (nonatomic, weak) id<IGScraperDelegate> delegate;
+
+-(void) loadRecipe:(NSString*)rubyRecipe error:(NSError* __autoreleasing *)error;
 
 -(NSArray*) recipes;
 
