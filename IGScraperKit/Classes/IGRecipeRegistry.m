@@ -119,7 +119,9 @@
 -(void) setup {
     self.context = [[JSContext alloc] init];
     [self.context configureIGHTMLQuery];
-    
+    self.context[@"Log"] = ^(NSString* message) {
+        NSLog(@"%@", message);
+    };
     NSString* path = [[NSBundle bundleForClass:[self class]] pathForResource:@"scraper_kit" ofType:@"js"];
     NSString* script = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     NSAssert(script != nil, @"error loading scraper_kit.js");
