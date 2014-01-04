@@ -86,9 +86,11 @@ pod "IGScraperKit/Scripting", '0.3.1'
 
 ## Dependencies
 
-- IGScraperKit use IGHTMLQuery for HTML processing.
-- IGScraperKit optionally use JavaScriptCore in iOS 7 for JavaScript support.
-- Use phantomjs to run opal tests.
+- IGScraperKit use [IGHTMLQuery](https://github.com/siuying/IGHTMLQuery) for HTML processing. Check the 
+[ruby wrappers](https://github.com/siuying/IGHTMLQuery/tree/master/IGHTMLQuery/Ruby) if you
+need to use the Ruby interface.
+- IGScraperKit use JavaScriptCore in iOS 7 and [Opal](http://opalrb.org/) for JavaScript support.
+- Use phantomjs to run Opal tests.
 
 ## Development
 
