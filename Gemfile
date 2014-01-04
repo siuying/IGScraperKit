@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
-gem "opal"
-gem "opal-sprockets"
-gem "rake"
+gem 'opal'
+gem 'opal-sprockets'
+gem 'opal-rspec'
+gem 'rake'

@@ -2,6 +2,9 @@ require "rubygems"
 require "bundler"
 Bundler.require
 
+require 'opal/rspec/rake_task'
+Opal::RSpec::RakeTask.new(:spec)
+
 desc "Build JavaScripts from Ruby"
 task :build do  
   env = Opal::Environment.new

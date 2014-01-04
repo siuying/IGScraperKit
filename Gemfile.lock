@@ -6,6 +6,9 @@ GEM
     multi_json (1.8.2)
     opal (0.5.5)
       source_map
+    opal-rspec (0.2.1)
+      opal (>= 0.5.4)
+      opal-sprockets (~> 0.3.0)
     opal-sprockets (0.3.0)
       opal (~> 0.5.0)
       sprockets
@@ -25,5 +28,6 @@ PLATFORMS
 
 DEPENDENCIES
   opal
+  opal-rspec
   opal-sprockets
   rake

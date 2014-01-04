@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IGHTMLQuery.h"
+
+@class IGXMLNode;
 
 typedef id (^IGScraperBlock)(IGXMLNode* node, NSString* url);
 
@@ -18,7 +19,25 @@ NS_ENUM(NSInteger, IGScraperErrors) {
     IGScraperErrorJavaScriptError = 2
 };
 
-@interface IGScraper : NSObject
+/**
+ A IGScraper can scrape a HTML page and return arbitary object.
+ */
+@protocol IGScraper
+
+/**
+ Scrape the HTML.
+ @param html HTML string
+ @param url URL string of the page to be parsed
+ 
+ @return object returned by scraper.
+ */
+-(id) scrapeWithHTML:(NSString*)html url:(NSString*)url;
+
+@end
+
+/**
+ */
+@interface IGScraper : NSObject <IGScraper>
 
 /**
  A block to scrape the HTML.
@@ -40,42 +59,14 @@ NS_ENUM(NSInteger, IGScraperErrors) {
  */
 +(instancetype) scraperWithBlock:(IGScraperBlock)scaperBlock;
 
+
 /**
  Scrape the HTML.
  @param html HTML string
  @param url URL string of the page to be parsed
-
- @return object as processed by `scraperBlock`.
+ 
+ @return object returned by calling IGScraperBlock.
  */
 -(id) scrapeWithHTML:(NSString*)html url:(NSString*)url;
-
-#ifdef IGSCRAPERKIT_ENABLE_SCRIPTING
-/**
- Create a scraper from JavaScript. Refer ``setScraperBlockWithJavaScript:`` for details.
-
- @return created scraper.
- */
-
-+(instancetype) scraperWithJavaScript:(NSString*)script;
-/**
- Create a scraper from Ruby. The script is evalulated in a context with ``self`` set to the IGXMLNode being parsed.
- Refer to ``scraperWithBlock:`` for details.
-
- @return created scraper.
- */
-+(instancetype) scraperWithRuby:(NSString*)ruby;
-
-/**
- Set the scraper block by using javascript. The script is evalulated in a context with ``node`` set to the IGXMLNode being parsed.
- Refer to ``scraperWithBlock:`` for details.
- */
--(void) setScraperBlockWithJavaScript:(NSString*)javascript;
-
-/**
- Set the scraper block by using Ruby. The script is evalulated in a context with ``self`` set to the IGXMLNode being parsed.
- Refer to ``scraperWithBlock:`` for details.
- */
--(void) setScraperBlockWithRuby:(NSString*)ruby;
-#endif
 
 @end

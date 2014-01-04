@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		542C23DE187511A50046B93A /* scraper_kit.js in Sources */ = {isa = PBXBuildFile; fileRef = 542C23DC1875119A0046B93A /* scraper_kit.js */; };
+		541AB88418779F840017F86E /* IGRecipeRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 541AB88318779F840017F86E /* IGRecipeRegistry.m */; };
+		541AB88518779F840017F86E /* IGRecipeRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 541AB88318779F840017F86E /* IGRecipeRegistry.m */; };
+		541AB8881877A4130017F86E /* IGRecipeRegistrySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 541AB8861877A4130017F86E /* IGRecipeRegistrySpec.m */; };
+		541AB88D1877A8780017F86E /* scraper_kit.js in Resources */ = {isa = PBXBuildFile; fileRef = 542C23DC1875119A0046B93A /* scraper_kit.js */; };
+		541AB88E1877A87B0017F86E /* scraper_kit.js in Resources */ = {isa = PBXBuildFile; fileRef = 542C23DC1875119A0046B93A /* scraper_kit.js */; };
+		541AB8911877A92E0017F86E /* walmart.rb in Resources */ = {isa = PBXBuildFile; fileRef = 541AB8901877A92E0017F86E /* walmart.rb */; };
+		541AB8931877A9370017F86E /* walmart.html in Resources */ = {isa = PBXBuildFile; fileRef = 541AB8921877A9370017F86E /* walmart.html */; };
 		54432AD01865ABA000FBFDE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432ACF1865ABA000FBFDE4 /* Foundation.framework */; };
 		54432AD21865ABA000FBFDE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432AD11865ABA000FBFDE4 /* CoreGraphics.framework */; };
 		54432AD41865ABA000FBFDE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54432AD31865ABA000FBFDE4 /* UIKit.framework */; };
@@ -40,7 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		542C23D918750E4A0046B93A /* scraper_scope.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = scraper_scope.rb; sourceTree = "<group>"; };
+		541AB87C18779ECF0017F86E /* recipe.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = recipe.rb; sourceTree = "<group>"; };
+		541AB87D18779ECF0017F86E /* recipe_registry.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = recipe_registry.rb; sourceTree = "<group>"; };
+		541AB87E18779ECF0017F86E /* scraper.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = scraper.rb; sourceTree = "<group>"; };
+		541AB88218779F840017F86E /* IGRecipeRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGRecipeRegistry.h; path = Classes/IGRecipeRegistry.h; sourceTree = "<group>"; };
+		541AB88318779F840017F86E /* IGRecipeRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGRecipeRegistry.m; path = Classes/IGRecipeRegistry.m; sourceTree = "<group>"; };
+		541AB8861877A4130017F86E /* IGRecipeRegistrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRecipeRegistrySpec.m; sourceTree = "<group>"; };
+		541AB8901877A92E0017F86E /* walmart.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = walmart.rb; sourceTree = "<group>"; };
+		541AB8921877A9370017F86E /* walmart.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = walmart.html; path = Fixtures/walmart.html; sourceTree = "<group>"; };
 		542C23DC1875119A0046B93A /* scraper_kit.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = scraper_kit.js; sourceTree = "<group>"; };
 		542C23DD187511A20046B93A /* scraper_kit.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = scraper_kit.rb; sourceTree = "<group>"; };
 		54432ACC1865ABA000FBFDE4 /* IGScraperKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGScraperKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +112,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		541AB87B18779ECF0017F86E /* scraper_kit */ = {
+			isa = PBXGroup;
+			children = (
+				541AB87C18779ECF0017F86E /* recipe.rb */,
+				541AB87D18779ECF0017F86E /* recipe_registry.rb */,
+				541AB87E18779ECF0017F86E /* scraper.rb */,
+			);
+			path = scraper_kit;
+			sourceTree = "<group>";
+		};
+		541AB8891877A46E0017F86E /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				541AB8921877A9370017F86E /* walmart.html */,
+			);
+			name = Fixtures;
+			sourceTree = "<group>";
+		};
+		541AB88F1877A92E0017F86E /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				541AB8901877A92E0017F86E /* walmart.rb */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
 		542C23D618750E4A0046B93A /* JavaScript */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,8 +149,8 @@
 		542C23D818750E4A0046B93A /* Ruby */ = {
 			isa = PBXGroup;
 			children = (
+				541AB87B18779ECF0017F86E /* scraper_kit */,
 				542C23DD187511A20046B93A /* scraper_kit.rb */,
-				542C23D918750E4A0046B93A /* scraper_scope.rb */,
 			);
 			path = Ruby;
 			sourceTree = "<group>";
@@ -182,7 +221,10 @@
 		54432AF71865ABA000FBFDE4 /* IGScraperKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				541AB88F1877A92E0017F86E /* Recipes */,
+				541AB8891877A46E0017F86E /* Fixtures */,
 				54432AFD1865ABA000FBFDE4 /* IGScraperSpec.m */,
+				541AB8861877A4130017F86E /* IGRecipeRegistrySpec.m */,
 				54432AF81865ABA000FBFDE4 /* Supporting Files */,
 			);
 			path = IGScraperKitTests;
@@ -202,6 +244,8 @@
 			children = (
 				54432B0B1866A37500FBFDE4 /* IGScraper.h */,
 				54432B0C1866A37500FBFDE4 /* IGScraper.m */,
+				541AB88218779F840017F86E /* IGRecipeRegistry.h */,
+				541AB88318779F840017F86E /* IGRecipeRegistry.m */,
 				5454348018751DA100B6795A /* JSContext+IGScraper.h */,
 				5454348118751DA100B6795A /* JSContext+IGScraper.m */,
 			);
@@ -288,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541AB88D1877A8780017F86E /* scraper_kit.js in Resources */,
 				54432AE61865ABA000FBFDE4 /* Main_iPad.storyboard in Resources */,
 				54432AEB1865ABA000FBFDE4 /* Images.xcassets in Resources */,
 				54432AE31865ABA000FBFDE4 /* Main_iPhone.storyboard in Resources */,
@@ -299,7 +344,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541AB8911877A92E0017F86E /* walmart.rb in Resources */,
+				541AB88E1877A87B0017F86E /* scraper_kit.js in Resources */,
 				54432AFC1865ABA000FBFDE4 /* InfoPlist.strings in Resources */,
+				541AB8931877A9370017F86E /* walmart.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,9 +421,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541AB88418779F840017F86E /* IGRecipeRegistry.m in Sources */,
 				54432AE91865ABA000FBFDE4 /* ViewController.m in Sources */,
 				54432AE01865ABA000FBFDE4 /* AppDelegate.m in Sources */,
-				542C23DE187511A50046B93A /* scraper_kit.js in Sources */,
 				5454348218751DA100B6795A /* JSContext+IGScraper.m in Sources */,
 				54432B0D1866A37500FBFDE4 /* IGScraper.m in Sources */,
 				54432ADC1865ABA000FBFDE4 /* main.m in Sources */,
@@ -386,6 +434,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541AB88518779F840017F86E /* IGRecipeRegistry.m in Sources */,
+				541AB8881877A4130017F86E /* IGRecipeRegistrySpec.m in Sources */,
 				54432AFE1865ABA000FBFDE4 /* IGScraperSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
