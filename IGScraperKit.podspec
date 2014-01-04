@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "IGScraperKit"
-  s.version      = "0.3.0-pre2"
+  s.version      = "0.3.0-pre3"
   s.summary      = "Create dynamic web scraper in Objective-C, using block or JavaScript."
 
   s.description  = <<-DESC
@@ -30,7 +30,7 @@ DESC
     sp.osx.deployment_target = '10.8'
     sp.dependency 'IGHTMLQuery', '~> 0.6.3'
     sp.source_files  = 'IGScraperKit/Classes/**/*.{h,m}'
-    sp.exclude_files  = 'IGScraperKit/Classes/JSContext+IGScraper.{h,m}'
+    sp.exclude_files  = 'IGScraperKit/Classes/IGRecipeRegistry.{h,m}'
   end
 
   # Include IGScraperKit/Scripting to enable Scripting support.

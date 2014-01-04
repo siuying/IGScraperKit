@@ -39,7 +39,7 @@ describe(@"IGRecipeRegistry", ^{
     });
     
     describe(@"-scrapeWithHTML:url:", ^{
-        it(@"should scrape supplied HTML and URL", ^{
+        it(@"should scrape and return hash (dictionary)", ^{
             NSString* html = HTML(@"walmart");
             NSString* url = @"http://www.walmart.com/search/search-ng.do?search_constraint=0&ic=48_0&search_query=batman&Find.x=0&Find.y=0&Find=Find%22";
             [registry loadRecipe:Recipe(@"walmart")];
@@ -49,6 +49,17 @@ describe(@"IGRecipeRegistry", ^{
             [[result[@"title"] should] equal:@"batman - Walmart.com"];
             NSArray* items = result[@"items"];
             [[theValue([items count]) should] equal:theValue(16)];
+        });
+
+        it(@"should scrape and return aray", ^{
+            NSString* html = HTML(@"google");
+            NSString* url = @"https://www.google.com/search?q=doughnuts";
+            [registry loadRecipe:Recipe(@"google")];
+
+            NSArray* result = [registry scrapeWithHTML:html url:url];
+            [[result shouldNot] beNil];
+            [[result should] beKindOfClass:[NSArray class]];
+            [[theValue([result count]) should] equal:theValue(10)];
         });
     });
 });
