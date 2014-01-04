@@ -15,7 +15,6 @@
 #import "JSContext+IGHTMLQueryRubyAdditions.h"
 
 @interface IGRecipeRegistry()
-@property (nonatomic, strong) JSContext* context;
 @property (nonatomic, strong) JSValue* recipeRegistry;
 @end
 
