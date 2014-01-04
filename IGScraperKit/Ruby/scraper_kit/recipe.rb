@@ -17,6 +17,10 @@ module ScraperKit
         scrapers << Scraper.new(self, url, &block)
       end
 
+      def on_text(url, &block)
+        scrapers << Scraper.new(self, url, :text, &block)
+      end
+
       def inherited(subclass)
         RecipeRegistry.register(subclass)
       end

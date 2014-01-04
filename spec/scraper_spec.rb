@@ -1,3 +1,4 @@
+require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/http'
 require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/xml_node'
 require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/xml_node_set'
 require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/html_doc'

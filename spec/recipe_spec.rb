@@ -1,3 +1,4 @@
+require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/http'
 require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/xml_node'
 require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/xml_node_set'
 require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/html_doc'
@@ -20,6 +21,11 @@ class MyRecipe < ScraperKit::Recipe
   on %r{http://comic.sfacg.com/redirect} do |node, url|
     get "http://comic.sfacg.com/WeeklyUpdate/"
   end
+
+  on_text %r{http://comic.sfacg.com/.+/.+\.js$} do |text, url|
+    `console.log(this)`
+    "c"
+  end
 end
 
 
@@ -32,15 +38,22 @@ describe ScraperKit::Recipe do
     scrapers = MyRecipe.scrapers
 
     expect(title).to eq("SF")
-    expect(scrapers.size).to eq(3)
+    expect(scrapers.size).to eq(4)
 
     scraper = scrapers[0]
+    expect(scraper.type).to eq(:html)
     expect(scraper.url).to eq("http://comic.sfacg.com/WeeklyUpdate/")
     expect(scraper.scrape(double(:node), double(:url))).to eq("a")
 
     scraper = scrapers[1]
+    expect(scraper.type).to eq(:html)
     expect(scraper.url).to eq(%r{http://comic.sfacg.com/HTML/[^/]+/[^/]+/})
     expect(scraper.scrape(double(:node), double(:url))).to eq("b")
+
+    scraper = scrapers[3]
+    expect(scraper.type).to eq(:text)
+    expect(scraper.url).to eq(%r{http://comic.sfacg.com/.+/.+\.js$})
+    expect(scraper.scrape(double(:html), double(:url))).to eq("c")
   end
 
   it "should registered to registry" do

@@ -26,7 +26,7 @@ If you want something more dynamic, you can define a Recipe in Ruby:
 class GoogleRecipe < ScraperKit::Recipe
   title "Google Search"
 
-  on %r{https://www\.google\.com/search\?q=.+} do |doc, url|
+  on %r{https://www\.google\.com/search\?q=.+} do
     doc.xpath('//h3/a').collect {|node| node.text }
   end
 end

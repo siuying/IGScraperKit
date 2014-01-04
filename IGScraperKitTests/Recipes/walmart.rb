@@ -1,6 +1,6 @@
 class WalmartProductRecipe < ScraperKit::Recipe
   title "Walmart"
-  on %r{http://www\.walmart\.com/search/search-ng\.do.+} do |doc, url|
+  on %r{http://www\.walmart\.com/search/search-ng\.do.+} do
     title = doc.xpath('//title').text
     items = doc.xpath("//*[contains(concat(' ', normalize-space(@class), ' '), ' item ')]").collect { |item|
       {
