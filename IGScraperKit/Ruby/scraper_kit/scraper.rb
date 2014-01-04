@@ -17,16 +17,16 @@ module ScraperKit
     def get(url)
       html = IGHTMLQuery::HTTP.get(url)
       if html
-        doc = (scraper_type == :text) ? html : HTMLDoc.new(html)
-        if doc
-          scraper = recipe.scraper_for_url(url)
-          if scraper
+        scraper = recipe.scraper_for_url(url)
+        if scraper
+          doc = (scraper.type == :text) ? html : HTMLDoc.new(html)
+          if doc
             scraper.scrape(doc, url)
           else
-            {:error => "scraper not found for url: #{url}, recipe: #{recipe}"}
+            {:error => "cannot process document: \n#{html}"}
           end
         else
-          {:error => "failed processing html"}
+          {:error => "scraper not found for url: #{url}, recipe: #{recipe}"}
         end
       else
         {:error => "failed fetching html from url: #{url}"}
