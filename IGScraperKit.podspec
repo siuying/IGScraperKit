@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "IGScraperKit"
-  s.version      = "0.3.0"
+  s.version      = "0.3.1"
   s.summary      = "Create dynamic web scraper in Objective-C or Ruby."
 
   s.description  = <<-DESC
