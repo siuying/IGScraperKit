@@ -1,7 +1,6 @@
 require "rubygems"
 require "bundler"
 Bundler.require
-require 'open3'
 
 require 'opal/rspec/rake_task'
 Opal::RSpec::RakeTask.new(:'spec:js')

@@ -25,6 +25,7 @@ If you want something more dynamic, you can define a Recipe in Ruby:
 ```ruby
 class GoogleRecipe < ScraperKit::Recipe
   title "Google Search"
+
   on %r{https://www\.google\.com/search\?q=.+} do |doc, url|
     doc.xpath('//h3/a').collect {|node| node.text }
   end
@@ -77,10 +78,12 @@ pod "IGScraperKit/Scripting", :podspec => 'https://raw.github.com/siuying/IGScra
 
 - IGScraperKit use IGHTMLQuery for HTML processing.
 - IGScraperKit optionally use JavaScriptCore in iOS 7 for JavaScript support.
+- Use phantomjs to run opal tests.
 
 ## Development
 
-1. In the project folder, run the command: ``pod install``
+1. Install gems: In the project folder, run the command: ``bundle install``
+2. Install cocoapods: Run the command: ``pod install``
 
 ## License
 
