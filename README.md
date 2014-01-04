@@ -65,13 +65,13 @@ To use this, you will need to include JavaScriptCore framework (iOS 7, OS X 10.9
 To install IGScraperKit throught [CocoaPods](http://cocoapods.org/), add following lines to your Podfile:
 
 ```ruby
-pod "IGScraperKit", :podspec => 'https://raw.github.com/siuying/IGScraperKit/master/IGScraperKit.podspec'
+pod "IGScraperKit", '0.3.0'
 ```
 
 Or with Ruby supports:
 
 ```ruby
-pod "IGScraperKit/Scripting", :podspec => 'https://raw.github.com/siuying/IGScraperKit/master/IGScraperKit.podspec'
+pod "IGScraperKit/Scripting", '0.3.0'
 ```
 
 ## Dependencies
