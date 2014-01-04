@@ -6,7 +6,7 @@ Create dynamic web scraper in Objective-C or Ruby.
 
 Create a scraper:
 
-```
+```objective-c
 #import "IGScraperKit.h"
 IGScraper* scraper = [IGScraper scraperWithBlock:^id(IGXMLNode* node) {
                 return [[[node queryWithXPath:@"//p"] firstObject] text];
@@ -15,11 +15,11 @@ IGScraper* scraper = [IGScraper scraperWithBlock:^id(IGXMLNode* node) {
 
 Then scrape HTML with scraper:
 
-```
+```objective-c
 [scraper scrape:@"<html><p>Hello World</p></html>" url:nil];
 ```
 
-If you want something more dynamic, you can define your scraper in Ruby:
+If you want something more dynamic, you can define a Recipe in Ruby:
 
 ```ruby
 class GoogleRecipe < ScraperKit::Recipe
@@ -43,7 +43,7 @@ IGRecipeRegistry* registry = [[IGRecipeRegistry alloc] init];
 NSArray* result = [registry scrapeWithHTML:html url:@"https://www.google.com/search?q=doughnuts"];
 ```
 
-To enable this, define IGSCRAPERKIT_ENABLE_SCRIPTING in your pch file or preprocessor macro before import IGScraperKit.h.
+To use this, you will need to include JavaScriptCore framework (iOS 7, OS X 10.9) and define IGSCRAPERKIT_ENABLE_SCRIPTING before import `IGScraperKit.h`.
 
 ## Installation
 
