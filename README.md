@@ -17,6 +17,7 @@ Then scrape HTML with scraper:
 
 ```objective-c
 [scraper scrape:@"<html><p>Hello World</p></html>" url:nil];
+// => @"Hello World"
 ```
 
 If you want something more dynamic, you can define a Recipe in Ruby:
@@ -41,6 +42,19 @@ IGRecipeRegistry* registry = [[IGRecipeRegistry alloc] init];
 [registry loadRecipe:Recipe(@"walmart")];
 
 NSArray* result = [registry scrapeWithHTML:html url:@"https://www.google.com/search?q=doughnuts"];
+// => <__NSArrayM 0xed85590>(
+// Doughnut - Wikipedia, the free encyclopedia,
+// Home - Krispy Kreme Doughnuts and Coffee,
+// Voodoo Doughnut - The Magic is in the Hole!!!,
+//【超人氣甜甜圈】Krispy Kreme Doughnuts 、台北店 ... - Yam天空部落,
+// Doughnut Recipes - Allrecipes.com,
+// Doughnut Plant,
+// Revolution Doughnuts,
+// Sidecar Doughnuts & Coffee,
+// Top Pot Hand-Forged Doughnuts,
+// Lucky's Doughnuts
+// )
+
 ```
 
 To use this, you will need to include JavaScriptCore framework (iOS 7, OS X 10.9) and define IGSCRAPERKIT_ENABLE_SCRIPTING before import `IGScraperKit.h`.
