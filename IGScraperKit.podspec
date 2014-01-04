@@ -41,8 +41,8 @@ DESC
     sp.prefix_header_contents = "#define IGSCRAPERKIT_ENABLE_SCRIPTING"
 
     sp.dependency 'IGHTMLQuery', '~> 0.6.4'
-    sp.dependency 'IGHTMLQuery/Ruby', '~> 0.6.4'
-    sp.dependency 'JavaScriptCoreOpalAdditions', '~> 0.2.3'
+    sp.dependency 'IGHTMLQuery/Ruby', '>= 0.6.5'
+    sp.dependency 'JavaScriptCoreOpalAdditions', '>= 0.2.3'
     sp.source_files  = 'IGScraperKit/Classes/**/*.{h,m}'
     sp.resources  = 'IGScraperKit/JavaScript/**/*.{js}'
   end
