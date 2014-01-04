@@ -23,11 +23,21 @@ Then scrape HTML with scraper:
 If you want something more dynamic, you can define a Recipe in Ruby:
 
 ```ruby
+# A recipe scrape page based on URL
 class GoogleRecipe < ScraperKit::Recipe
   title "Google Search"
 
+  # define a HTML scraper by `on url`, where url can be a string or a Regexp
   on %r{https://www\.google\.com/search\?q=.+} do
+    # doc is a HTMLDoc object represent the document
     doc.xpath('//h3/a').collect {|node| node.text }
+  end
+
+  # if the page you need to parse is not HTML
+  # use `on_text url`
+  on_text %r{https://www\.google\.com/search\.json.+} do
+    # doc is a string of the document
+    JSON.parse(doc)
   end
 end
 ```
