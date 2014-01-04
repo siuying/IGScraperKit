@@ -15,4 +15,8 @@ class WalmartProductRecipe < ScraperKit::Recipe
       :items => items
     }
   end
+
+  on_text "http://www\.walmart\.com/test.json" do
+    JSON.parse(doc)
+  end
 end

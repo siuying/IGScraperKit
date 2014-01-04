@@ -1,7 +1,4 @@
 PODS:
-  - IGHTMLQuery (HEAD based on 0.6.4):
-    - IGHTMLQuery/Core
-  - IGHTMLQuery/Core (HEAD based on 0.6.4)
   - IGHTMLQuery/JavaScript (HEAD based on 0.6.4)
   - IGHTMLQuery/Ruby (HEAD based on 0.6.4):
     - IGHTMLQuery/JavaScript
@@ -14,7 +11,6 @@ PODS:
     - Kiwi/NonARC
 
 DEPENDENCIES:
-  - IGHTMLQuery (HEAD)
   - IGHTMLQuery/Ruby (HEAD)
   - JavaScriptCoreOpalAdditions (~> 0.2.3)
   - Kiwi/XCTest

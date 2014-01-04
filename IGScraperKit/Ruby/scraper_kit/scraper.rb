@@ -53,8 +53,13 @@ module ScraperKit
     end
 
     def scrape(doc, url)
-      ScraperScope.new(recipe, type, doc, url).instance_eval(&@scraper_block)
+      if doc.is_a?(XMLNode)
+        raise "Attempt to scrape HTML with text parser" if type == :text
+        ScraperScope.new(recipe, type, doc, url).instance_eval(&@scraper_block)
+      else
+        doc = (type == :text) ? doc : HTMLDoc.new(doc)
+        ScraperScope.new(recipe, type, doc, url).instance_eval(&@scraper_block)
+      end
     end
-
   end
 end

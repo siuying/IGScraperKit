@@ -48,9 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		541AB87C18779ECF0017F86E /* recipe.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = recipe.rb; sourceTree = "<group>"; };
-		541AB87D18779ECF0017F86E /* recipe_registry.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = recipe_registry.rb; sourceTree = "<group>"; };
-		541AB87E18779ECF0017F86E /* scraper.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = scraper.rb; sourceTree = "<group>"; };
 		541AB88218779F840017F86E /* IGRecipeRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGRecipeRegistry.h; path = Classes/IGRecipeRegistry.h; sourceTree = "<group>"; };
 		541AB88318779F840017F86E /* IGRecipeRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGRecipeRegistry.m; path = Classes/IGRecipeRegistry.m; sourceTree = "<group>"; };
 		541AB8861877A4130017F86E /* IGRecipeRegistrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRecipeRegistrySpec.m; sourceTree = "<group>"; };
@@ -62,7 +59,6 @@
 		541AB8991877C0610017F86E /* IGScraperDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IGScraperDelegate.h; path = Classes/IGScraperDelegate.h; sourceTree = "<group>"; };
 		541AB89A1877C5BE0017F86E /* broken.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = broken.rb; sourceTree = "<group>"; };
 		542C23DC1875119A0046B93A /* scraper_kit.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = scraper_kit.js; sourceTree = "<group>"; };
-		542C23DD187511A20046B93A /* scraper_kit.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = scraper_kit.rb; sourceTree = "<group>"; };
 		54432ACC1865ABA000FBFDE4 /* IGScraperKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGScraperKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54432ACF1865ABA000FBFDE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		54432AD11865ABA000FBFDE4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -85,6 +81,7 @@
 		54432AFD1865ABA000FBFDE4 /* IGScraperSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGScraperSpec.m; sourceTree = "<group>"; };
 		54432B0B1866A37500FBFDE4 /* IGScraper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGScraper.h; path = Classes/IGScraper.h; sourceTree = "<group>"; };
 		54432B0C1866A37500FBFDE4 /* IGScraper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGScraper.m; path = Classes/IGScraper.m; sourceTree = "<group>"; };
+		54ED457C187849FF005391EC /* Ruby */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ruby; sourceTree = "<group>"; };
 		AE0B25CA9F78463AA14E9CEB /* Pods-IGScraperKitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGScraperKitTests.xcconfig"; path = "Pods/Pods-IGScraperKitTests.xcconfig"; sourceTree = "<group>"; };
 		BC17E94127D841A59446ECD7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C08D9C2321374CD6A8997A02 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,16 +114,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		541AB87B18779ECF0017F86E /* scraper_kit */ = {
-			isa = PBXGroup;
-			children = (
-				541AB87C18779ECF0017F86E /* recipe.rb */,
-				541AB87D18779ECF0017F86E /* recipe_registry.rb */,
-				541AB87E18779ECF0017F86E /* scraper.rb */,
-			);
-			path = scraper_kit;
-			sourceTree = "<group>";
-		};
 		541AB8891877A46E0017F86E /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,15 +139,6 @@
 				542C23DC1875119A0046B93A /* scraper_kit.js */,
 			);
 			path = JavaScript;
-			sourceTree = "<group>";
-		};
-		542C23D818750E4A0046B93A /* Ruby */ = {
-			isa = PBXGroup;
-			children = (
-				541AB87B18779ECF0017F86E /* scraper_kit */,
-				542C23DD187511A20046B93A /* scraper_kit.rb */,
-			);
-			path = Ruby;
 			sourceTree = "<group>";
 		};
 		54432AC31865ABA000FBFDE4 = {
@@ -201,8 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				54432B071865ABA700FBFDE4 /* Classes */,
+				54ED457C187849FF005391EC /* Ruby */,
 				542C23D618750E4A0046B93A /* JavaScript */,
-				542C23D818750E4A0046B93A /* Ruby */,
 				54432ADE1865ABA000FBFDE4 /* AppDelegate.h */,
 				54432ADF1865ABA000FBFDE4 /* AppDelegate.m */,
 				54432AE11865ABA000FBFDE4 /* Main_iPhone.storyboard */,

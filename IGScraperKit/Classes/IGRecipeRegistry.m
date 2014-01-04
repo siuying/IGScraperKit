@@ -77,10 +77,8 @@
         
     } else {
         NSError* error;
-        IGHTMLDocument* doc = [[IGHTMLDocument alloc] initWithHTMLString:html error:&error];
         if (error == nil) {
-            JSValue* xmlNode = [[[scraper context] evaluateRuby:@"lambda {|node| XMLNode.new(node) }"] callWithArguments:@[doc]];
-            JSValue* value = [scraper invokeMethod:@"$scrape" withArguments:@[xmlNode, url]];
+            JSValue* value = [scraper invokeMethod:@"$scrape" withArguments:@[html, url]];
             if ([value isNull] || [value isUndefined]) {
                 NSError* error = [self jsError];
                 if (error && self.delegate && [self.delegate respondsToSelector:@selector(scraper:scrapeDidFailed:)]) {
