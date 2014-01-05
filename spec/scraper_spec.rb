@@ -1,10 +1,3 @@
-require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/http'
-require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/xml_node'
-require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/xml_node_set'
-require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/html_doc'
-require '../IGScraperKit/Ruby/scraper_kit/recipe'
-require '../IGScraperKit/Ruby/scraper_kit/recipe_registry'
-require '../IGScraperKit/Ruby/scraper_kit/scraper'
 require 'spec_helper'
 
 describe ScraperKit::Scraper do

@@ -1,15 +1,18 @@
-# redefine HTTP.get for test
-module IGHTMLQuery
-  module HTTP
-    def self.get(url)
-      "fake #{url} content"
-    end
-  end
-end
-
 # mock native classes
 `
 IGHTMLDocument = function(){
   return {};
 }
 `
+`
+Log = function(message){
+  console.log(message)
+}
+
+HTTPGet = function(url){
+  return "fake " + url + " content"
+}
+`
+
+require 'html_query'
+require 'scraper_kit'

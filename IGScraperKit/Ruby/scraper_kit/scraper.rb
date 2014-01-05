@@ -61,5 +61,9 @@ module ScraperKit
         ScraperScope.new(recipe, type, doc, url).instance_eval(&@scraper_block)
       end
     end
+
+    def to_s
+      "<Scraper##{recipe.name} url=#{url}>"
+    end
   end
 end

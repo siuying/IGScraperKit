@@ -22,13 +22,13 @@ module ScraperKit
       end
 
       def inherited(subclass)
-        RecipeRegistry.register(subclass)
+        RecipeRegistry.instance.register(subclass)
       end
 
       # Get first scraper defined to scrape the supplied URL
       # return a scraper if one is defined. return nil otherwise.
       def scraper_for_url(url)
-        scrapers.detect {|scraper| scraper.url.is_a?(Regexp) ? (url =~ scraper.url) : (url == scraper.url) }
+        scrapers.detect {|scraper| scraper.url.is_a?(String) ? (url == scraper.url) : (url =~ scraper.url) }
       end
     end
     extend ClassMethods

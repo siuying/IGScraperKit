@@ -3,7 +3,10 @@ require "bundler"
 Bundler.require
 
 require 'opal/rspec/rake_task'
-Opal::RSpec::RakeTask.new(:'spec:js')
+Opal::RSpec::RakeTask.new(:'spec:js') do |s|
+  s.append_path "IGScraperKit/Ruby"
+  s.append_path "Pods/IGHTMLQuery/IGHTMLQuery/Ruby"
+end
 
 desc "Run Objective-C specs"
 task :'spec:objc' do

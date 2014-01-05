@@ -1,21 +1,13 @@
-require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/http'
-require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/xml_node'
-require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/xml_node_set'
-require '../Pods/IGHTMLQuery/IGHTMLQuery/Ruby/html_doc'
-require '../IGScraperKit/Ruby/scraper_kit/recipe'
-require '../IGScraperKit/Ruby/scraper_kit/recipe_registry'
-require '../IGScraperKit/Ruby/scraper_kit/scraper'
 require 'spec_helper'
-
-class RecipeRegistryRecipe < ScraperKit::Recipe
-  title "RecipeRegistryRecipe"
-
-  on %r{http://google.com/.+} do |node, url|
-    "a"
-  end
-end
+require 'recipes/my_recipe'
 
 describe ScraperKit::RecipeRegistry do
+  describe "#recipes" do
+    it "should loaded recipes" do
+      recipes = ScraperKit::RecipeRegistry.instance.recipes
+      expect(recipes.size).to eq(1)
+    end
+  end
   describe "#scraper_for_url" do
     it "should return nil for unsupported url" do
       scraper = ScraperKit::RecipeRegistry.instance.scraper_for_url("http://www.yahoo.com")
@@ -23,8 +15,9 @@ describe ScraperKit::RecipeRegistry do
     end
 
     it "should return the recipe for supported url" do
-      scraper = ScraperKit::RecipeRegistry.instance.scraper_for_url("http://google.com/123")
-      expect(scraper).to eq(RecipeRegistryRecipe.scrapers.first)
+      scraper = ScraperKit::RecipeRegistry.instance.scraper_for_url("http://comic.sfacg.com/WeeklyUpdate/")
+      expect(scraper).to_not be_nil
+      expect(scraper).to eq(MyRecipe.scrapers.first)
     end
   end
 end

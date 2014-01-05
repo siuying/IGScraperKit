@@ -12,10 +12,6 @@ module ScraperKit
       @recipes
     end
 
-    def reset
-      @recipes = []
-    end
-
     # get first scraper from all recipes that can scrape the supplied URL
     def scraper_for_url(url)
       scraper = nil
@@ -23,8 +19,8 @@ module ScraperKit
       scraper
     end
 
-    def self.register(scraper_class)
-      self.instance.recipes << scraper_class
+    def register(scraper_class)
+      recipes << scraper_class
     end
   end
 end
