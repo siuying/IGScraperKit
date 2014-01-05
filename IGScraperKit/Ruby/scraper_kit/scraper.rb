@@ -14,22 +14,22 @@ module ScraperKit
     # url - URL to be get
     #
     # @return return the scraped result if succeed. return a hash with one key :error if failed.
-    def get(url)
-      html = IGHTMLQuery::HTTP.get(url)
+    def get(get_url)
+      html = IGHTMLQuery::HTTP.get(get_url)
       if html
-        scraper = recipe.scraper_for_url(url)
+        scraper = recipe.scraper_for_url(get_url)
         if scraper
-          doc = (scraper.type == :text) ? html : HTMLDoc.new(html)
-          if doc
-            scraper.scrape(doc, url)
+          get_doc = (scraper.type == :text) ? html : HTMLDoc.new(html)
+          if get_doc
+            scraper.scrape(get_doc, get_url)
           else
             {:error => "cannot process document: \n#{html}"}
           end
         else
-          {:error => "scraper not found for url: #{url}, recipe: #{recipe}"}
+          {:error => "scraper not found for url: #{get_url}, recipe: #{recipe}"}
         end
       else
-        {:error => "failed fetching html from url: #{url}"}
+        {:error => "failed fetching html from url: #{get_url}"}
       end
     end
   end
@@ -52,13 +52,13 @@ module ScraperKit
       @scraper_block = block
     end
 
-    def scrape(doc, url)
-      if doc.is_a?(XMLNode)
+    def scrape(the_doc, the_url)
+      if the_doc.is_a?(XMLNode)
         raise "Attempt to scrape HTML with text parser" if type == :text
-        ScraperScope.new(recipe, type, doc, url).instance_eval(&@scraper_block)
+        ScraperScope.new(recipe, type, the_doc, url).instance_eval(&@scraper_block)
       else
-        doc = (type == :text) ? doc : HTMLDoc.new(doc)
-        ScraperScope.new(recipe, type, doc, url).instance_eval(&@scraper_block)
+        doc = (type == :text) ? the_doc : HTMLDoc.new(the_doc)
+        ScraperScope.new(recipe, type, doc, the_url).instance_eval(&@scraper_block)
       end
     end
 
