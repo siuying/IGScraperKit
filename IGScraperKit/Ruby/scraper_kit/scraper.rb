@@ -55,7 +55,7 @@ module ScraperKit
     def scrape(the_doc, the_url)
       if the_doc.is_a?(XMLNode)
         raise "Attempt to scrape HTML with text parser" if type == :text
-        ScraperScope.new(recipe, type, the_doc, url).instance_eval(&@scraper_block)
+        ScraperScope.new(recipe, type, the_doc, the_url).instance_eval(&@scraper_block)
       else
         doc = (type == :text) ? the_doc : HTMLDoc.new(the_doc)
         ScraperScope.new(recipe, type, doc, the_url).instance_eval(&@scraper_block)
