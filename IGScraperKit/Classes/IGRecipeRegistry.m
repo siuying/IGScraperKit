@@ -68,7 +68,7 @@
 
 -(id) scrapeWithHTML:(NSString*)html url:(NSString*)url {
     JSValue* scraper = [[self recipeRegistry] invokeMethod:@"$scraper_for_url" withArguments:@[url]];
-    if ([scraper isUndefined] || [scraper isNull] || [[scraper invokeMethod:@"$to_n" withArguments:@[]] isNull]) {
+    if ([scraper isUndefined] || [scraper isNull]) {
         NSError* error = [self jsError];
         if (error && self.delegate && [self.delegate respondsToSelector:@selector(scraper:scrapeDidFailed:)]) {
             [self.delegate scraper:self scrapeDidFailed:error];
