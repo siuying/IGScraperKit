@@ -1,3 +1,5 @@
+require 'opal-parser'
+
 module ScraperKit
   class Recipe
     module ClassMethods
