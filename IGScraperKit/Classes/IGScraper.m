@@ -24,12 +24,12 @@ NSString* const IGScraperErrorDomain = @"IGScraperError";
     return [[self alloc] initWithBlock:scraperBlock];
 }
 
--(id) scrapeWithHTML:(NSString*)html url:(NSString*)url {
+-(id) scrapeWithHTML:(NSString*)html URL:(NSURL*)URL {
     if (self.scraperBlock) {
         NSError* error;
         IGHTMLDocument* doc = [[IGHTMLDocument alloc] initWithHTMLString:html error:&error];
         if (error == nil) {
-            id result = self.scraperBlock(doc, url);
+            id result = self.scraperBlock(doc, URL.absoluteString);
             if (self.delegate) {
                 [self.delegate scraper:self scrapeDidSucceed:result];
             }

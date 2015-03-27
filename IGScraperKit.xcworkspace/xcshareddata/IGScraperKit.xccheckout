@@ -10,29 +10,29 @@
 	<string>IGScraperKit</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>00E7239F-CCE9-48D2-90AB-6B75C5BC7D7B</key>
+		<key>2F0F19C28A50B3A40E6A3076BFB44FCF298B288B</key>
 		<string>ssh://github.com/siuying/IGScraperKit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>IGScraperKit.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>00E7239F-CCE9-48D2-90AB-6B75C5BC7D7B</key>
+		<key>2F0F19C28A50B3A40E6A3076BFB44FCF298B288B</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/siuying/IGScraperKit.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>00E7239F-CCE9-48D2-90AB-6B75C5BC7D7B</string>
+	<string>2F0F19C28A50B3A40E6A3076BFB44FCF298B288B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>00E7239F-CCE9-48D2-90AB-6B75C5BC7D7B</string>
+			<string>2F0F19C28A50B3A40E6A3076BFB44FCF298B288B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>IGScraperKit</string>
 		</dict>

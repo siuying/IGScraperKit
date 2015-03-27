@@ -20,6 +20,16 @@ Then scrape HTML with scraper:
 // => @"Hello World"
 ```
 
+```objective-c
+#import "IGScraperKit.h"
+
+IGScraperRecipe* recipe = [[IGScraperRecipe alloc] init];
+... TODO ..
+
+```
+
+## Write Scraper With Ruby
+
 If you want something more dynamic, you can define a Recipe in Ruby:
 
 ```ruby

@@ -33,11 +33,11 @@ NS_ENUM(NSInteger, IGScraperErrors) {
 /**
  Scrape the HTML.
  @param html HTML string
- @param url URL string of the page to be parsed
+ @param NSURL URL of the page to be parsed
  
  @return object returned by scraper.
  */
--(id) scrapeWithHTML:(NSString*)html url:(NSString*)url;
+-(id) scrapeWithHTML:(NSString*)html URL:(NSURL*)URL;
 
 @end
 
@@ -71,10 +71,10 @@ NS_ENUM(NSInteger, IGScraperErrors) {
 /**
  Scrape the HTML.
  @param html HTML string
- @param url URL string of the page to be parsed
+ @param url URL of the page to be parsed
  
  @return object returned by calling IGScraperBlock.
  */
--(id) scrapeWithHTML:(NSString*)html url:(NSString*)url;
+-(id) scrapeWithHTML:(NSString*)html URL:(NSURL*)URL;
 
 @end

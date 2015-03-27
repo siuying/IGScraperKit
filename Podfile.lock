@@ -1,23 +1,41 @@
 PODS:
-  - IGHTMLQuery/JavaScript (0.6.5)
-  - IGHTMLQuery/Ruby (0.6.5):
+  - CocoaLumberjack (1.9.2):
+    - CocoaLumberjack/Extensions (= 1.9.2)
+  - CocoaLumberjack/Core (1.9.2)
+  - CocoaLumberjack/Extensions (1.9.2):
+    - CocoaLumberjack/Core
+  - CSSSelectorConverter (1.1.5):
+    - CocoaLumberjack (~> 1.9.0)
+    - NUIParse
+  - IGHTMLQuery/Core (0.8.1):
+    - CSSSelectorConverter (>= 1.1.0)
+  - IGHTMLQuery/JavaScript (0.8.1):
+    - IGHTMLQuery/Core
+  - IGHTMLQuery/Ruby (0.8.1):
     - IGHTMLQuery/JavaScript
-    - JavaScriptCoreOpalAdditions (>= 0.2.2)
-  - JavaScriptCoreOpalAdditions (0.2.3)
-  - Kiwi/ARC (2.2.3)
-  - Kiwi/NonARC (2.2.3)
-  - Kiwi/XCTest (2.2.3):
+    - JavaScriptCoreOpalAdditions (>= 0.3.1)
+  - JavaScriptCoreOpalAdditions (0.3.1):
+    - ObjectiveSugar (~> 1.1.0)
+  - Kiwi/ARC (2.2.4)
+  - Kiwi/NonARC (2.2.4)
+  - Kiwi/XCTest (2.2.4):
     - Kiwi/ARC
     - Kiwi/NonARC
+  - NUIParse (1.2.1)
+  - ObjectiveSugar (1.1.0)
 
 DEPENDENCIES:
-  - IGHTMLQuery/Ruby (= 0.6.5)
-  - JavaScriptCoreOpalAdditions (~> 0.2.3)
+  - IGHTMLQuery/Ruby (>= 0.8.1)
+  - JavaScriptCoreOpalAdditions (>= 0.2.4)
   - Kiwi/XCTest
 
 SPEC CHECKSUMS:
-  IGHTMLQuery: 77b2c353d371b9ad9ebcdd4c15e8fd884051132a
-  JavaScriptCoreOpalAdditions: a996ff2e4576307f8fdb38cacd9bf2e3d614f5b8
-  Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
+  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
+  CSSSelectorConverter: 1b6be269a4e5cf94454532dce535552ae658aeda
+  IGHTMLQuery: 984384b50e613c25b671a836c7e2a614a98b58fd
+  JavaScriptCoreOpalAdditions: 03fedeb053ad5ef8704bf1dff4a490bab2c47161
+  Kiwi: c73667f2b84cbf36f1a3830267c5a4ae8dcbd8ba
+  NUIParse: f29eb240cfc9848b216c827884f37ae64abd19e4
+  ObjectiveSugar: f48793f5902c77cfc02a4ce46d2e8ecddcad4dc2
 
-COCOAPODS: 0.28.0
+COCOAPODS: 0.36.0
