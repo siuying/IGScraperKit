@@ -69,7 +69,7 @@ describe(@"IGRecipeRegistry", ^{
             NSString* html = HTML(@"walmart");
             NSString* url = @"http://www.walmart.com/search/search-ng.do?search_constraint=0&ic=48_0&search_query=batman&Find.x=0&Find.y=0&Find=Find%22";
             [registry loadRecipe:Recipe(@"walmart") error:nil];
-            NSDictionary* result = [registry scrapeWithHTML:html url:url];
+            NSDictionary* result = [registry scrapeWithHTML:html URL:[NSURL URLWithString:url]];
             [[result shouldNot] beNil];
             [[result should] beKindOfClass:[NSDictionary class]];
             [[result[@"title"] should] equal:@"batman - Walmart.com"];
@@ -82,7 +82,7 @@ describe(@"IGRecipeRegistry", ^{
             NSString* url = @"https://www.google.com/search?q=doughnuts";
             [registry loadRecipe:Recipe(@"google") error:nil];
 
-            NSArray* result = [registry scrapeWithHTML:html url:url];
+            NSArray* result = [registry scrapeWithHTML:html URL:[NSURL URLWithString:url]];
             [[result shouldNot] beNil];
             [[result should] beKindOfClass:[NSArray class]];
             [[theValue([result count]) should] equal:theValue(10)];
@@ -93,7 +93,7 @@ describe(@"IGRecipeRegistry", ^{
             NSString* url = @"http://www.walmart.com/test.json";
             [registry loadRecipe:Recipe(@"walmart") error:nil];
 
-            NSArray* result = [registry scrapeWithHTML:html url:url];
+            NSArray* result = [registry scrapeWithHTML:html URL:[NSURL URLWithString:url]];
             [[result shouldNot] beNil];
             [[result should] beKindOfClass:[NSArray class]];
             [[result should] equal:@[@1]];

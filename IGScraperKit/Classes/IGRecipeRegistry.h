@@ -40,6 +40,6 @@
 
  @return object as processed by the recipe scraper, if any. Return nil if not found.
  */
--(id) scrapeWithHTML:(NSString*)html url:(NSString*)url;
+-(id) scrapeWithHTML:(NSString*)html URL:(NSURL*)URL;
 
 @end

@@ -66,8 +66,8 @@
     }
 }
 
--(id) scrapeWithHTML:(NSString*)html url:(NSString*)url {
-    JSValue* scraper = [[self recipeRegistry] invokeMethod:@"$scraper_for_url" withArguments:@[url]];
+-(id) scrapeWithHTML:(NSString*)html URL:(NSURL*)URL {
+    JSValue* scraper = [[self recipeRegistry] invokeMethod:@"$scraper_for_url" withArguments:@[URL.absoluteString]];
     if ([scraper isUndefined] || [scraper isNull]) {
         NSError* error = [self jsError];
         if (error && self.delegate && [self.delegate respondsToSelector:@selector(scraper:scrapeDidFailed:)]) {
@@ -78,7 +78,7 @@
     } else {
         NSError* error;
         if (error == nil) {
-            JSValue* value = [scraper invokeMethod:@"$scrape" withArguments:@[html, url]];
+            JSValue* value = [scraper invokeMethod:@"$scrape" withArguments:@[html, URL.absoluteString]];
             if ([value isNull] || [value isUndefined]) {
                 NSError* error = [self jsError];
                 if (error && self.delegate && [self.delegate respondsToSelector:@selector(scraper:scrapeDidFailed:)]) {
