@@ -24,7 +24,8 @@ NSString* const IGScraperRecipeErrorDomain = @"IGScraperRecipeErrorDomain";
     return self;
 }
 
--(void) addURLHandler:(IGScraperBlock)handler withURLPattern:(NSRegularExpression*)urlPattern
+-(void) addURLPattern:(NSRegularExpression*)urlPattern
+     withScraperBlock:(IGScraperBlock)handler
 {
     [self.recipes setObject:handler forKey:urlPattern];
 }

@@ -25,7 +25,8 @@ extern NSString* const IGScraperRecipeErrorDomain;
  * @param handler a scraper block that handle given URL pattern
  * @param urlPattern a NSRegularExpression that match URL
  */
--(void) addURLHandler:(IGScraperBlock)handler withURLPattern:(NSRegularExpression*)urlPattern;
+-(void) addURLPattern:(NSRegularExpression*)urlPattern
+     withScraperBlock:(IGScraperBlock)handler;
 
 /**
  * Check if recipe can handle given URL

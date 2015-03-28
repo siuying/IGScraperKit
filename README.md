@@ -24,16 +24,17 @@ Then scrape HTML with scraper:
 #import "IGScraperKit.h"
 
 IGScraperRecipe* recipe = [[IGScraperRecipe alloc] init];
-[recipe addURLHandler:^id(IGXMLNode *node, NSString *url) {
+[recipe addURLPattern:[NSRegularExpression regularExpressionWithPattern:@"https://www\.google\.com/search\?q=.+" options:0 error:nil]
+     withScraperBlock:^id(IGXMLNode *node, NSString *url) {
   // handling for the page ...
   return data;
-} withURLPattern:[NSRegularExpression regularExpressionWithPattern:@"https://www\.google\.com/search\?q=.+" options:0 error:nil]];
-[recipe addURLHandler:^id(IGXMLNode *node, NSString *url) {
+}];
+[recipe addURLPattern:[NSRegularExpression regularExpressionWithPattern:@"https://www\.google\.com/" options:0 error:nil]
+  withScraperBlock:^id(IGXMLNode *node, NSString *url) {
   // handling for the page ...
   return data;
-} withURLPattern:[NSRegularExpression regularExpressionWithPattern:@"https://www\.google\.com/" options:0 error:nil]];
+}];
 [recipe scrapeWithHTML:html URL:URL];
-
 ```
 
 ## Write Scraper With Ruby
