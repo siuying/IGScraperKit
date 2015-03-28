@@ -16,7 +16,7 @@ IGScraper* scraper = [IGScraper scraperWithBlock:^id(IGXMLNode* node, NSString* 
 Then scrape HTML with scraper:
 
 ```objective-c
-[scraper scrape:@"<html><p>Hello World</p></html>" url:nil];
+[scraper scrape:@"<html><p>Hello World</p></html>" URL:nil];
 // => @"Hello World"
 ```
 
@@ -24,7 +24,15 @@ Then scrape HTML with scraper:
 #import "IGScraperKit.h"
 
 IGScraperRecipe* recipe = [[IGScraperRecipe alloc] init];
-... TODO ..
+[recipe addURLHandler:^id(IGXMLNode *node, NSString *url) {
+  // handling for the page ...
+  return data;
+} withURLPattern:[NSRegularExpression regularExpressionWithPattern:@"https://www\.google\.com/search\?q=.+" options:0 error:nil]];
+[recipe addURLHandler:^id(IGXMLNode *node, NSString *url) {
+  // handling for the page ...
+  return data;
+} withURLPattern:[NSRegularExpression regularExpressionWithPattern:@"https://www\.google\.com/" options:0 error:nil]];
+[recipe scrapeWithHTML:html URL:URL];
 
 ```
 
