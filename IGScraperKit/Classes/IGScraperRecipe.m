@@ -29,6 +29,19 @@ NSString* const IGScraperRecipeErrorDomain = @"IGScraperRecipeErrorDomain";
     [self.recipes setObject:handler forKey:urlPattern];
 }
 
+-(BOOL) cadHandleURL:(NSURL*)URL
+{
+    __block BOOL canHandle = false;
+    NSString* urlString = URL.absoluteString;
+    [self.recipes enumerateKeysAndObjectsUsingBlock:^(NSRegularExpression* urlPattern, IGScraperBlock handler, BOOL *stop) {
+        if ([[urlPattern matchesInString:urlString options:0 range:NSMakeRange(0, urlString.length)] count] > 0) {
+            canHandle = YES;
+            *stop = YES;
+        }
+    }];
+    return canHandle;
+}
+
 -(id) scrapeWithHTML:(NSString*)html URL:(NSURL*)URL
 {
     NSParameterAssert(html);
@@ -38,7 +51,7 @@ NSString* const IGScraperRecipeErrorDomain = @"IGScraperRecipeErrorDomain";
     __block BOOL matched = false;
     NSString* urlString = URL.absoluteString;
     [self.recipes enumerateKeysAndObjectsUsingBlock:^(NSRegularExpression* urlPattern, IGScraperBlock handler, BOOL *stop) {
-        if ([urlPattern matchesInString:urlString options:0 range:NSMakeRange(0, urlString.length)]) {
+        if ([[urlPattern matchesInString:urlString options:0 range:NSMakeRange(0, urlString.length)] count] > 0) {
             NSError* error;
             IGHTMLDocument* doc = [[IGHTMLDocument alloc] initWithHTMLString:html error:&error];
             if (error == nil) {

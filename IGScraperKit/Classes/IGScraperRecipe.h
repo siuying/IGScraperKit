@@ -28,6 +28,11 @@ extern NSString* const IGScraperRecipeErrorDomain;
 -(void) addURLHandler:(IGScraperBlock)handler withURLPattern:(NSRegularExpression*)urlPattern;
 
 /**
+ * Check if recipe can handle given URL
+ */
+-(BOOL) cadHandleURL:(NSURL*)URL;
+
+/**
  * @throw NSException exception is throw if html or URL is nil
  */
 -(id) scrapeWithHTML:(NSString*)html URL:(NSURL*)URL;

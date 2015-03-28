@@ -33,6 +33,7 @@
 		54432AFC1865ABA000FBFDE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54432AFA1865ABA000FBFDE4 /* InfoPlist.strings */; };
 		54432AFE1865ABA000FBFDE4 /* IGScraperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54432AFD1865ABA000FBFDE4 /* IGScraperSpec.m */; };
 		54432B0D1866A37500FBFDE4 /* IGScraper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54432B0C1866A37500FBFDE4 /* IGScraper.m */; };
+		5491706E1AC6740500D5D98A /* IGScraperRecipeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5491706D1AC6740500D5D98A /* IGScraperRecipeSpec.m */; };
 		54925B651AC51DC600FA51CE /* IGScraperRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 54925B641AC51DC600FA51CE /* IGScraperRecipe.m */; };
 		AD24B15C91AA4DEC93ECEE50 /* libPods-IGScraperKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D5E8FE119845E9B3BB3924 /* libPods-IGScraperKitTests.a */; };
 		F044C95A26F04452AF4D593E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C08D9C2321374CD6A8997A02 /* libPods.a */; };
@@ -83,6 +84,7 @@
 		54432AFD1865ABA000FBFDE4 /* IGScraperSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGScraperSpec.m; sourceTree = "<group>"; };
 		54432B0B1866A37500FBFDE4 /* IGScraper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGScraper.h; path = Classes/IGScraper.h; sourceTree = "<group>"; };
 		54432B0C1866A37500FBFDE4 /* IGScraper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGScraper.m; path = Classes/IGScraper.m; sourceTree = "<group>"; };
+		5491706D1AC6740500D5D98A /* IGScraperRecipeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGScraperRecipeSpec.m; sourceTree = "<group>"; };
 		54925B631AC51DC600FA51CE /* IGScraperRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGScraperRecipe.h; path = Classes/IGScraperRecipe.h; sourceTree = "<group>"; };
 		54925B641AC51DC600FA51CE /* IGScraperRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IGScraperRecipe.m; path = Classes/IGScraperRecipe.m; sourceTree = "<group>"; };
 		54ED457C187849FF005391EC /* Ruby */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ruby; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				541AB8891877A46E0017F86E /* Fixtures */,
 				54432AFD1865ABA000FBFDE4 /* IGScraperSpec.m */,
 				541AB8861877A4130017F86E /* IGRecipeRegistrySpec.m */,
+				5491706D1AC6740500D5D98A /* IGScraperRecipeSpec.m */,
 				54432AF81865ABA000FBFDE4 /* Supporting Files */,
 			);
 			path = IGScraperKitTests;
@@ -443,6 +446,7 @@
 				541AB88518779F840017F86E /* IGRecipeRegistry.m in Sources */,
 				541AB8881877A4130017F86E /* IGRecipeRegistrySpec.m in Sources */,
 				54432AFE1865ABA000FBFDE4 /* IGScraperSpec.m in Sources */,
+				5491706E1AC6740500D5D98A /* IGScraperRecipeSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
