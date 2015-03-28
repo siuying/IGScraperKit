@@ -55,7 +55,7 @@ describe(@"IGRecipeRegistry", ^{
             IGScraper* scraper = [registry scraperWithUrl:url];
             [[scraper shouldNot] beNil];
 
-            NSDictionary* result = [scraper scrapeWithHTML:html url:url];
+            NSDictionary* result = [scraper scrapeWithHTML:html URL:[NSURL URLWithString:url]];
             [[result shouldNot] beNil];
             [[result should] beKindOfClass:[NSDictionary class]];
             [[result[@"title"] should] equal:@"batman - Walmart.com"];

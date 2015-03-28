@@ -17,7 +17,7 @@ describe(@"IGScraper", ^{
             scraper = [IGScraper scraperWithBlock:^id(IGXMLNode* node, NSString* url) {
                 return [[[node queryWithXPath:@"//p"] firstObject] text];
             }];
-            NSString* text = [scraper scrapeWithHTML:@"<html><p>Hello World</p></html>" url:@"http://www.google.com/1.html"];
+            NSString* text = [scraper scrapeWithHTML:@"<html><p>Hello World</p></html>" URL:[NSURL URLWithString:@"http://www.google.com/1.html"]];
             [[text should] equal:@"Hello World"];
         });
 
@@ -25,7 +25,7 @@ describe(@"IGScraper", ^{
             scraper = [IGScraper scraperWithBlock:^id(IGXMLNode* node, NSString* url) {
                 return [[[node queryWithXPath:@"//p"] firstObject] text];
             }];
-            NSString* text = [scraper scrapeWithHTML:@"<html></html>" url:@"http://www.google.com/1.html"];
+            NSString* text = [scraper scrapeWithHTML:@"<html></html>" URL:[NSURL URLWithString:@"http://www.google.com/1.html"]];
             [[text should] beNil];
         });
     });
